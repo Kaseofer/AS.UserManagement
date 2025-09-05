@@ -14,16 +14,46 @@ namespace AgendaSaludApp.Application.Services
             _credencialesRepository = credencialesRepository;
             _mapper = mapper;
         }
+
         public async Task<CredencialDto> CreateCredencialAsync(CredencialDto credencialDto)
         {
-            var credencialNueva = await _credencialesRepository.AltaAsync(_mapper.Map<Credencial>(credencialDto));
+            try
+            {
+                var credencialVigente = await _credencialesRepository
+                                        .GetAsync(c => c.PacienteId == credencialDto.PacienteId && c.Vigente);
+                
+                // Si existe una credencial vigente, marcarla como no vigente
+                if (credencialVigente != null)
+                { 
+                    credencialVigente.FechaFin = DateTime.UtcNow;
+                    credencialVigente.Vigente = false;
+                    var isSuccess = await _credencialesRepository.UpdateAsync(credencialVigente);
 
-            return _mapper.Map<CredencialDto>(credencialNueva);
+                    if(!isSuccess)
+                        return null;
+                }
+
+                
+                credencialDto.FechaInicio = DateTime.UtcNow;
+                credencialDto.Vigente = true;
+                credencialDto.FechaFin = null;
+
+                // Crear la nueva credencial
+                var credencialNueva = await _credencialesRepository.AddAsync(_mapper.Map<Credencial>(credencialDto));
+
+
+                return _mapper.Map<CredencialDto>(credencialNueva);
+            }
+            catch 
+            {
+
+                return null;
+            }
         }
 
         public async Task<IEnumerable<CredencialDto>> GetAllCredencialesAsync()
         {
-            var credenciales = await _credencialesRepository.ObtenerTodosAsync();
+            var credenciales = await _credencialesRepository.GetAllAsync();
 
             return _mapper.Map<IEnumerable<CredencialDto>>(credenciales);
 
@@ -31,22 +61,14 @@ namespace AgendaSaludApp.Application.Services
 
         public async Task<CredencialDto?> GetCredencialByIdAsync(int id)
         {
-            var credencial = await _credencialesRepository.ObtenerPorIdAsync(id);
+            var credencial = await _credencialesRepository.GetByIdAsync(id);
 
             return _mapper.Map<CredencialDto?>(credencial);
         }
 
-        public async Task<CredencialDto?> GetCredencialVigenteByPacienteIdAsync(int pacienteId)
-        {
-            var credencial = await _credencialesRepository
-                                 .BuscarAsync(c => c.PacienteId == pacienteId && c.Vigente);
-
-            return _mapper.Map<CredencialDto?>(credencial.FirstOrDefault());
-        }
-
         public async Task<bool> UpdateCredencialAsync(CredencialDto credencialDto)
         {
-            var isSuccess = await _credencialesRepository.ActualizarAsync(_mapper.Map<Credencial>(credencialDto));
+            var isSuccess = await _credencialesRepository.UpdateAsync(_mapper.Map<Credencial>(credencialDto));
             
             return isSuccess;
         }

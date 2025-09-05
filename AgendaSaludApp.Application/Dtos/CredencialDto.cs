@@ -7,10 +7,8 @@ namespace AgendaSaludApp.Application.Dtos
         public int Id { get; set; }
 
         public int PacienteId { get; set; }
-        public Paciente Paciente { get; set; }
 
         public int ObraSocialId { get; set; }
-        public ObraSocial ObraSocial { get; set; }
 
         public string NroAfiliado { get; set; }
         public string Plan { get; set; }

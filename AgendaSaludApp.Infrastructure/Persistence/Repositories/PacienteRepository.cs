@@ -1,7 +1,9 @@
 ﻿using AgendaSaludApp.Core.Entities;
+using AgendaSaludApp.Infrastructure.Logger;
 using AgendaSaludApp.Infrastructure.Persistence.Context;
 using AgendaSaludApp.Infrastructure.Persistence.Repositories.Intefaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System.Linq.Expressions;
 
 namespace AgendaSaludApp.Infrastructure.Persistence.Repositories
@@ -10,10 +12,12 @@ namespace AgendaSaludApp.Infrastructure.Persistence.Repositories
     {
         private readonly AgendaSaludDBContext _dbContext;
         private readonly IGenericRepository<Credencial> _credencialRepository;
+        private readonly IAppLogger<GenericRepository<Paciente>> _logger;
 
-        public PacienteRepository(AgendaSaludDBContext context): base(context) { 
+        public PacienteRepository(AgendaSaludDBContext context, IAppLogger<GenericRepository<Paciente>> logger) : base(context, logger ) { 
         
             _dbContext = context;
+            _logger = logger;
         }
 
         public async Task<Paciente> AltaPacienteConCredencialAsync(Paciente paciente,Credencial credencial)
@@ -25,7 +29,7 @@ namespace AgendaSaludApp.Infrastructure.Persistence.Repositories
                 { 
 
                     //Alta del Paciente
-                    var pacienteNuevo = await this.AltaAsync(paciente);
+                    var pacienteNuevo = await this.AddAsync(paciente);
 
                     credencial.PacienteId = pacienteNuevo.Id;
                     credencial.FechaInicio = DateTime.Now;
@@ -33,7 +37,7 @@ namespace AgendaSaludApp.Infrastructure.Persistence.Repositories
                     
 
                     //Alta de la Credencial
-                    await _credencialRepository.AltaAsync(credencial);
+                    await _credencialRepository.AddAsync(credencial);
 
                     pacienteNuevo.Credencial = credencial;
 

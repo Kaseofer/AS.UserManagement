@@ -1,4 +1,7 @@
-﻿namespace AgendaSaludApp.Application.Common
+﻿using AgendaSaludApp.Application.Dtos;
+using AgendaSaludApp.Core.Entities;
+
+namespace AgendaSaludApp.Application.Common
 {
     public static class PascalCaseHelper
     {
@@ -11,5 +14,13 @@
                 char.ToUpper(word[0]) + word.Substring(1).ToLower()));
         }
 
+
+        public static void NormalizarPaciente(PacienteDto pacienteDto)
+        {
+            pacienteDto.Nombre = ToPascalCase(pacienteDto.Nombre);
+            pacienteDto.Apellido = ToPascalCase(pacienteDto.Apellido);
+        }
     }
+
+    
 }

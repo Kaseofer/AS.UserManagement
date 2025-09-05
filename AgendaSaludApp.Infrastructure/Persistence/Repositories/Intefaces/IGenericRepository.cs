@@ -2,11 +2,11 @@
 
 public interface IGenericRepository<T> where T : class
 {
-    Task<T?> ObtenerPorIdAsync(int id);
-    Task<IEnumerable<T>> ObtenerTodosAsync();
-    Task<IEnumerable<T>> BuscarAsync(Expression<Func<T, bool>> filtro);
-    Task<T?> ObtenerAsync(Expression<Func<T, bool>> filtro);
-    Task<T> AltaAsync(T entity);
-    Task<bool> ActualizarAsync(T entity);
-    Task<bool> EliminarAsync(T entity);
+    Task<T?> GetByIdAsync(int id);
+    Task<IEnumerable<T>> GetAllAsync();
+    Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> filtro);
+    Task<T?> GetAsync(Expression<Func<T, bool>> filtro);
+    Task<T> AddAsync(T entity);
+    Task<bool> UpdateAsync(T entity);
+    Task<bool> RemoveAsync(T entity);
 }

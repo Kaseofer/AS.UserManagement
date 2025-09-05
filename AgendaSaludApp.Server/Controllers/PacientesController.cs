@@ -13,9 +13,12 @@ namespace AgendaSaludApp.Api.Controllers
     public class PacientesController : ControllerBase
     {
         private readonly IPacientesService _pacientesService;
-        public PacientesController(IPacientesService pacientesService)
+        private readonly ICredencialService _credencialService;
+
+        public PacientesController(IPacientesService pacientesService, ICredencialService credencialService)
         {
             _pacientesService = pacientesService;
+            _credencialService = credencialService;
         }
 
         [HttpGet("{id}")]
@@ -52,10 +55,15 @@ namespace AgendaSaludApp.Api.Controllers
         }
 
         [HttpPost]
-        [Route("Guardar")]
-        public async Task<IActionResult> Guardar([FromBody] PacienteDto pacienteDto)
+        [Route("Create")]
+        public async Task<IActionResult> Create([FromBody] PacienteDto pacienteDto)
         {
             var response = new ResponseApi<PacienteDto>();
+
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
 
             try
             {
@@ -99,6 +107,32 @@ namespace AgendaSaludApp.Api.Controllers
                 BadRequest(response);
             }
             return Ok();
+        }
+
+        [HttpPost]
+        [Route("Credencial/Create")]
+        public async Task<IActionResult> CreateCredencial([FromBody] CredencialDto credencialDto)
+        {
+            var response = new ResponseApi<CredencialDto>();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            try
+            {
+                var nuevaCredencial = await _credencialService.CreateCredencialAsync(credencialDto);
+
+                response.IsSuccess = true;
+                response.Data = nuevaCredencial;
+                response.Message = "Credencial creada exitosamente";
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = ex.Message;
+
+                return BadRequest(response);
+
+            }
         }
     }
 }

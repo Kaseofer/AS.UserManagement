@@ -1,17 +1,29 @@
 using AgendaSaludApp.Application.IOC;
 using AgendaSaludApp.Application.Mappers;
+using AgendaSaludApp.Application.Validators;
 using AgendaSaludApp.Infrastructure.IOC;
-
+using AgendaSaludApp.Infrastructure.Logger;
 using AgendaSaludApp.Infrastructure.Persistence.Context;
+using SharpGrip.FluentValidation.AutoValidation.Mvc.Extensions;
+
 using Microsoft.EntityFrameworkCore;
-using AgendaSaludApp.Application.Mappers;
-using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<AgendaSaludDBContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("AgendaSaludDb"))
     .UseSnakeCaseNamingConvention());
+
+
+//Logger
+builder.Services.AddSingleton(typeof(IAppLogger<>), typeof(FileLogger<>));
+
+builder.Services.AddInfrastructureLayer();
+builder.Services.AddApplicationLayer();
+
+// Registrás los validadores que tengas en tu proyecto
+builder.Services.AddFluentValidationAutoValidation();
+
 
 
 // Add services to the container.
@@ -33,8 +45,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddAutoMapper(cfg => { }, typeof(AutoMapperProfiles).Assembly);
 
 // Dependency Injection
-builder.Services.AddInfrastructureLayer();
-builder.Services.AddApplicationLayer();
+
 
 var app = builder.Build();
 

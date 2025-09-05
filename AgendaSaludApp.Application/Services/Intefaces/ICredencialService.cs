@@ -14,11 +14,6 @@ namespace AgendaSaludApp.Application.Services.Intefaces
 
         Task<IEnumerable<CredencialDto>> GetAllCredencialesAsync();
         Task<CredencialDto?> GetCredencialByIdAsync(int id);
-        Task<CredencialDto?> GetCredencialVigenteByPacienteIdAsync(int pacienteId); 
         
-
-
-
-
     }
 }

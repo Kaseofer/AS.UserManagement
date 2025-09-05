@@ -26,11 +26,9 @@ namespace AgendaSaludApp.Application.Services
         {
             try
             {
-                pacienteDto.Nombre = PascalCaseHelper.ToPascalCase(pacienteDto.Nombre);
-                pacienteDto.Apellido = PascalCaseHelper.ToPascalCase(pacienteDto.Apellido);
-                pacienteDto.Direccion = PascalCaseHelper.ToPascalCase(pacienteDto.Direccion);
+                PascalCaseHelper.NormalizarPaciente(pacienteDto);
 
-                var pacienteNuevo = await _pacienteRepository.AltaAsync(_mapper.Map<Paciente>(pacienteDto));
+                var pacienteNuevo = await _pacienteRepository.AddAsync(_mapper.Map<Paciente>(pacienteDto));
 
                 return _mapper.Map<PacienteDto>(pacienteNuevo);
 
@@ -43,14 +41,14 @@ namespace AgendaSaludApp.Application.Services
 
         public async Task<PacienteDto?> ObtenerPacienteByIdAsync(int id)
         {
-           var paciente =  await _pacienteRepository.ObtenerPorIdAsync(id);
+           var paciente =  await _pacienteRepository.GetByIdAsync(id);
 
             return _mapper.Map<PacienteDto>(paciente);
         }
 
         public async Task<IEnumerable<PacienteDto>> ObtenerTodosPacientesAsync()
         {
-            var pacientes = await _pacienteRepository.ObtenerTodosAsync();
+            var pacientes = await _pacienteRepository.GetAllAsync();
 
             return _mapper.Map<IEnumerable<PacienteDto>>(pacientes);
 

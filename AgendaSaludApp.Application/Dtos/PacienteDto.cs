@@ -22,7 +22,7 @@ namespace AgendaSaludApp.Application.Dtos
         public DateOnly FechaNacimiento { get; set; }
 
         [Required(ErrorMessage = "El sexo es obligatorio")]
-        [MaxLength(10, ErrorMessage = "Máximo 10 caracteres")]
+        [MaxLength(1, ErrorMessage = "Máximo 10 caracteres")]
         public string Sexo { get; set; }
 
         [MaxLength(20, ErrorMessage = "Máximo 20 caracteres")]

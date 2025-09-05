@@ -1,4 +1,5 @@
-﻿using AgendaSaludApp.Infrastructure.Persistence.Context;
+﻿using AgendaSaludApp.Infrastructure.Logger;
+using AgendaSaludApp.Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
@@ -7,28 +8,31 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
     protected readonly AgendaSaludDBContext _context;
     protected readonly DbSet<T> _dbSet;
 
-    public GenericRepository(AgendaSaludDBContext context)
+    private readonly IAppLogger<GenericRepository<T>> _logger;
+
+    public GenericRepository(AgendaSaludDBContext context, IAppLogger<GenericRepository<T>> logger)
     {
         _context = context;
         _dbSet = context.Set<T>();
+        _logger = logger;
     }
 
-    public async Task<T?> ObtenerPorIdAsync(int id)
+    public async Task<T?> GetByIdAsync(int id)
     {
         return await _dbSet.FindAsync(id);
     }
 
-    public async Task<IEnumerable<T>> ObtenerTodosAsync()
+    public async Task<IEnumerable<T>> GetAllAsync()
     {
         return await _dbSet.ToListAsync();
     }
 
-    public async Task<IEnumerable<T>> BuscarAsync(Expression<Func<T, bool>> filtro)
+    public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> filtro)
     {
         return await _dbSet.Where(filtro).ToListAsync();
     }
 
-    public async Task<T> AltaAsync(T entity)
+    public async Task<T> AddAsync(T entity)
     {
         try
         {
@@ -38,15 +42,16 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
 
             return entity;
         }
-        catch
+        catch(Exception ex)
         {
+            _logger.LogError("AddAsync: Error al dar de alta la entidad", ex,entity);
 
             throw;
         }
     }
 
 
-    public async Task<bool> ActualizarAsync(T entity)
+    public async Task<bool> UpdateAsync(T entity)
     {
         try
         {
@@ -54,13 +59,15 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
             await _context.SaveChangesAsync();
             return true;
         }
-        catch
+        catch(Exception ex)
         {
+            _logger.LogError("UpdateAsync", ex, entity);
+
             return false;
         }
     }
 
-    public async Task<bool> EliminarAsync(T entity)
+    public async Task<bool> RemoveAsync(T entity)
     {
         try
         {
@@ -68,14 +75,15 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
             await _context.SaveChangesAsync();
             return true;
         }
-        catch
+        catch(Exception ex)
         {
+            _logger.LogError("EliminarAsync", ex, entity);
             return false;
         }
     }
 
 
-    public async Task<T?> ObtenerAsync(Expression<Func<T, bool>> filtro)
+    public async Task<T?> GetAsync(Expression<Func<T, bool>> filtro)
     {
         var entity = await _dbSet.FirstOrDefaultAsync(filtro);
 
