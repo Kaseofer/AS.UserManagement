@@ -1,0 +1,1035 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Proyectos\\AgendaSaludApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\services\\pacientesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\services\\pacientesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\common\\pascalcasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\common\\pascalcasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\configurations\\estadoturnoconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\configurations\\estadoturnoconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\configurations\\especialidadconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\configurations\\especialidadconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\configurations\\credencialconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\configurations\\credencialconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\services\\credencialservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\services\\credencialservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC12031-9EEA-4430-B03D-02865C4FEA12}|AgendaSaludApp.Infrastructure\\AgendaSaludApp.Infrastructure.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.infrastructure\\persistence\\repositories\\pacienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDC12031-9EEA-4430-B03D-02865C4FEA12}|AgendaSaludApp.Infrastructure\\AgendaSaludApp.Infrastructure.csproj|solutionrelative:agendasaludapp.infrastructure\\persistence\\repositories\\pacienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\configurations\\profesionalhorarioconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\configurations\\profesionalhorarioconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\configurations\\profesionalconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\configurations\\profesionalconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\configurations\\obrasocialconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\configurations\\obrasocialconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EEA8306-904B-4C43-8916-D0564EEE03CB}|AgendaSaludApp.Server\\AgendaSaludApp.Api.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EEA8306-904B-4C43-8916-D0564EEE03CB}|AgendaSaludApp.Server\\AgendaSaludApp.Api.csproj|solutionrelative:agendasaludapp.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\entities\\turno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\entities\\turno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\entities\\paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\entities\\paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\entities\\motivo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\entities\\motivo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\dtos\\turnodetalledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\dtos\\turnodetalledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EEA8306-904B-4C43-8916-D0564EEE03CB}|AgendaSaludApp.Server\\AgendaSaludApp.Api.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7EEA8306-904B-4C43-8916-D0564EEE03CB}|AgendaSaludApp.Server\\AgendaSaludApp.Api.csproj|solutionrelative:agendasaludapp.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\entities\\turnodetalle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\entities\\turnodetalle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\entities\\profesionalhorario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\entities\\profesionalhorario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\entities\\profesional.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\entities\\profesional.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\entities\\obrasocial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\entities\\obrasocial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\entities\\estadoturno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\entities\\estadoturno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\entities\\especialidad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\entities\\especialidad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\entities\\credencial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\entities\\credencial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\dtos\\estadoturnodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\dtos\\estadoturnodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\dtos\\especialidaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\dtos\\especialidaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\dtos\\pacientedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\dtos\\pacientedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\configurations\\pacienteconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\configurations\\pacienteconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\mappers\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\mappers\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\ioc\\addapplicationservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\ioc\\addapplicationservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EEA8306-904B-4C43-8916-D0564EEE03CB}|AgendaSaludApp.Server\\AgendaSaludApp.Api.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7EEA8306-904B-4C43-8916-D0564EEE03CB}|AgendaSaludApp.Server\\AgendaSaludApp.Api.csproj|solutionrelative:agendasaludapp.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EEA8306-904B-4C43-8916-D0564EEE03CB}|AgendaSaludApp.Server\\AgendaSaludApp.Api.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.server\\controllers\\pacientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EEA8306-904B-4C43-8916-D0564EEE03CB}|AgendaSaludApp.Server\\AgendaSaludApp.Api.csproj|solutionrelative:agendasaludapp.server\\controllers\\pacientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\services\\intefaces\\ipacientesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\services\\intefaces\\ipacientesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC12031-9EEA-4430-B03D-02865C4FEA12}|AgendaSaludApp.Infrastructure\\AgendaSaludApp.Infrastructure.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.infrastructure\\persistence\\repositories\\intefaces\\ipacienterespository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDC12031-9EEA-4430-B03D-02865C4FEA12}|AgendaSaludApp.Infrastructure\\AgendaSaludApp.Infrastructure.csproj|solutionrelative:agendasaludapp.infrastructure\\persistence\\repositories\\intefaces\\ipacienterespository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\agendasaludapp.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\agendasaludapp.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EEA8306-904B-4C43-8916-D0564EEE03CB}|AgendaSaludApp.Server\\AgendaSaludApp.Api.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.server\\common\\responseapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EEA8306-904B-4C43-8916-D0564EEE03CB}|AgendaSaludApp.Server\\AgendaSaludApp.Api.csproj|solutionrelative:agendasaludapp.server\\common\\responseapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC12031-9EEA-4430-B03D-02865C4FEA12}|AgendaSaludApp.Infrastructure\\AgendaSaludApp.Infrastructure.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.infrastructure\\persistence\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDC12031-9EEA-4430-B03D-02865C4FEA12}|AgendaSaludApp.Infrastructure\\AgendaSaludApp.Infrastructure.csproj|solutionrelative:agendasaludapp.infrastructure\\persistence\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC12031-9EEA-4430-B03D-02865C4FEA12}|AgendaSaludApp.Infrastructure\\AgendaSaludApp.Infrastructure.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.infrastructure\\persistence\\repositories\\intefaces\\iprofesionalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDC12031-9EEA-4430-B03D-02865C4FEA12}|AgendaSaludApp.Infrastructure\\AgendaSaludApp.Infrastructure.csproj|solutionrelative:agendasaludapp.infrastructure\\persistence\\repositories\\intefaces\\iprofesionalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC12031-9EEA-4430-B03D-02865C4FEA12}|AgendaSaludApp.Infrastructure\\AgendaSaludApp.Infrastructure.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.infrastructure\\persistence\\repositories\\intefaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDC12031-9EEA-4430-B03D-02865C4FEA12}|AgendaSaludApp.Infrastructure\\AgendaSaludApp.Infrastructure.csproj|solutionrelative:agendasaludapp.infrastructure\\persistence\\repositories\\intefaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC12031-9EEA-4430-B03D-02865C4FEA12}|AgendaSaludApp.Infrastructure\\AgendaSaludApp.Infrastructure.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.infrastructure\\persistence\\repositories\\profesionalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDC12031-9EEA-4430-B03D-02865C4FEA12}|AgendaSaludApp.Infrastructure\\AgendaSaludApp.Infrastructure.csproj|solutionrelative:agendasaludapp.infrastructure\\persistence\\repositories\\profesionalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC12031-9EEA-4430-B03D-02865C4FEA12}|AgendaSaludApp.Infrastructure\\AgendaSaludApp.Infrastructure.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.infrastructure\\persistence\\context\\agendasaluddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDC12031-9EEA-4430-B03D-02865C4FEA12}|AgendaSaludApp.Infrastructure\\AgendaSaludApp.Infrastructure.csproj|solutionrelative:agendasaludapp.infrastructure\\persistence\\context\\agendasaluddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC12031-9EEA-4430-B03D-02865C4FEA12}|AgendaSaludApp.Infrastructure\\AgendaSaludApp.Infrastructure.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.infrastructure\\ioc\\addinfrastructureservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDC12031-9EEA-4430-B03D-02865C4FEA12}|AgendaSaludApp.Infrastructure\\AgendaSaludApp.Infrastructure.csproj|solutionrelative:agendasaludapp.infrastructure\\ioc\\addinfrastructureservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\services\\intefaces\\icredencialservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\services\\intefaces\\icredencialservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\configurations\\turnoconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\configurations\\turnoconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\configurations\\turnodetalleconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\configurations\\turnodetalleconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\configurations\\motivoconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\configurations\\motivoconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.core\\agendasaludapp.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B1745ABA-2BF6-424E-B715-4C0C5922E63A}|AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj|solutionrelative:agendasaludapp.core\\agendasaludapp.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\dtos\\credencialdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\dtos\\credencialdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\dtos\\obrasocialdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\dtos\\obrasocialdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\dtos\\horariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\dtos\\horariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\dtos\\profesionaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\dtos\\profesionaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\dtos\\turnodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\dtos\\turnodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\dtos\\pacienteresumendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\dtos\\pacienteresumendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\services\\intefaces\\iturnosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\services\\intefaces\\iturnosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\services\\intefaces\\iprofesionalesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\services\\intefaces\\iprofesionalesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC12031-9EEA-4430-B03D-02865C4FEA12}|AgendaSaludApp.Infrastructure\\AgendaSaludApp.Infrastructure.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.infrastructure\\dtos\\pacientedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDC12031-9EEA-4430-B03D-02865C4FEA12}|AgendaSaludApp.Infrastructure\\AgendaSaludApp.Infrastructure.csproj|solutionrelative:agendasaludapp.infrastructure\\dtos\\pacientedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\services\\turnosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\services\\turnosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.application\\services\\profesionalesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8BBD7BEF-91E6-44DA-84A2-FF31BC18C652}|AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj|solutionrelative:agendasaludapp.application\\services\\profesionalesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EEA8306-904B-4C43-8916-D0564EEE03CB}|AgendaSaludApp.Server\\AgendaSaludApp.Api.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.server\\controllers\\profesionalescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EEA8306-904B-4C43-8916-D0564EEE03CB}|AgendaSaludApp.Server\\AgendaSaludApp.Api.csproj|solutionrelative:agendasaludapp.server\\controllers\\profesionalescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EEA8306-904B-4C43-8916-D0564EEE03CB}|AgendaSaludApp.Server\\AgendaSaludApp.Api.csproj|c:\\proyectos\\agendasaludapp\\agendasaludapp.server\\controllers\\turnoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EEA8306-904B-4C43-8916-D0564EEE03CB}|AgendaSaludApp.Server\\AgendaSaludApp.Api.csproj|solutionrelative:agendasaludapp.server\\controllers\\turnoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PascalCaseHelper.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Common\\PascalCaseHelper.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Common\\PascalCaseHelper.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Common\\PascalCaseHelper.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Common\\PascalCaseHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T01:29:00.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EstadoTurnoConfiguration.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\EstadoTurnoConfiguration.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Configurations\\EstadoTurnoConfiguration.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\EstadoTurnoConfiguration.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Configurations\\EstadoTurnoConfiguration.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAhwAwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T13:26:39.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CredencialService.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Services\\CredencialService.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Services\\CredencialService.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Services\\CredencialService.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Services\\CredencialService.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAlwCkAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T12:42:43.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PacientesService.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Services\\PacientesService.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Services\\PacientesService.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Services\\PacientesService.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Services\\PacientesService.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAYwBkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:35:51.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EspecialidadConfiguration.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\EspecialidadConfiguration.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Configurations\\EspecialidadConfiguration.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\EspecialidadConfiguration.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Configurations\\EspecialidadConfiguration.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAhwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T13:26:50.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "AgendaSaludApp.Application",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj",
+              "RelativeToolTip": "AgendaSaludApp.Application\\AgendaSaludApp.Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-04T21:14:40.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CredencialConfiguration.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\CredencialConfiguration.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Configurations\\CredencialConfiguration.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\CredencialConfiguration.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Configurations\\CredencialConfiguration.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAApwBEAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T13:16:58.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PacienteRepository.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\PacienteRepository.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\PacienteRepository.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\PacienteRepository.cs",
+              "RelativeToolTip": "AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\PacienteRepository.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAApwB0AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T18:09:11.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProfesionalHorarioConfiguration.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\ProfesionalHorarioConfiguration.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Configurations\\ProfesionalHorarioConfiguration.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\ProfesionalHorarioConfiguration.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Configurations\\ProfesionalHorarioConfiguration.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAhwBEAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T13:27:15.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProfesionalConfiguration.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\ProfesionalConfiguration.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Configurations\\ProfesionalConfiguration.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\ProfesionalConfiguration.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Configurations\\ProfesionalConfiguration.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAApwAwAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T13:27:11.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ObraSocialConfiguration.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\ObraSocialConfiguration.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Configurations\\ObraSocialConfiguration.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\ObraSocialConfiguration.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Configurations\\ObraSocialConfiguration.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAhwBAAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T13:27:02.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Server\\Program.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Server\\Program.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Server\\Program.cs",
+              "RelativeToolTip": "AgendaSaludApp.Server\\Program.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:27:34.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Turno.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\Turno.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Entities\\Turno.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\Turno.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Entities\\Turno.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:19:06.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Paciente.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\Paciente.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Entities\\Paciente.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\Paciente.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Entities\\Paciente.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwBkAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:20:32.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Motivo.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\Motivo.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Entities\\Motivo.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\Motivo.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Entities\\Motivo.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:21:37.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "TurnoDetalleDto.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\TurnoDetalleDto.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Dtos\\TurnoDetalleDto.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\TurnoDetalleDto.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Dtos\\TurnoDetalleDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T11:20:36.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Server\\appsettings.json",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Server\\appsettings.json",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Server\\appsettings.json",
+              "RelativeToolTip": "AgendaSaludApp.Server\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAACVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-04T01:29:22.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "TurnoDetalle.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\TurnoDetalle.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Entities\\TurnoDetalle.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\TurnoDetalle.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Entities\\TurnoDetalle.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA+wBMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:19:59.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ProfesionalHorario.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\ProfesionalHorario.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Entities\\ProfesionalHorario.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\ProfesionalHorario.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Entities\\ProfesionalHorario.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAgwA4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:18:23.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Profesional.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\Profesional.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Entities\\Profesional.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\Profesional.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Entities\\Profesional.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAIwB4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:17:44.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ObraSocial.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\ObraSocial.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Entities\\ObraSocial.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\ObraSocial.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Entities\\ObraSocial.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:21:20.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "EstadoTurno.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\EstadoTurno.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Entities\\EstadoTurno.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\EstadoTurno.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Entities\\EstadoTurno.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:23:02.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Especialidad.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\Especialidad.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Entities\\Especialidad.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\Especialidad.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Entities\\Especialidad.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwA0AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:19:38.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Credencial.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\Credencial.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Entities\\Credencial.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Entities\\Credencial.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Entities\\Credencial.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAAAoAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:20:50.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "EstadoTurnoDto.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\EstadoTurnoDto.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Dtos\\EstadoTurnoDto.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\EstadoTurnoDto.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Dtos\\EstadoTurnoDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T00:27:07.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "EspecialidadDto.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\EspecialidadDto.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Dtos\\EspecialidadDto.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\EspecialidadDto.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Dtos\\EspecialidadDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T11:21:30.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "PacienteDto.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\PacienteDto.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Dtos\\PacienteDto.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\PacienteDto.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Dtos\\PacienteDto.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T11:16:10.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "PacienteConfiguration.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\PacienteConfiguration.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Configurations\\PacienteConfiguration.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\PacienteConfiguration.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Configurations\\PacienteConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T13:27:06.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "AddApplicationServices.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\IOC\\AddApplicationServices.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\IOC\\AddApplicationServices.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\IOC\\AddApplicationServices.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\IOC\\AddApplicationServices.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAA0AAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:54:48.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "AutoMapperProfiles.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Mappers\\AutoMapperProfiles.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Mappers\\AutoMapperProfiles.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Mappers\\AutoMapperProfiles.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Mappers\\AutoMapperProfiles.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T11:18:00.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Server\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Server\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Server\\Properties\\launchSettings.json",
+              "RelativeToolTip": "AgendaSaludApp.Server\\Properties\\launchSettings.json",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-04T21:24:29.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "PacientesController.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Server\\Controllers\\PacientesController.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Server\\Controllers\\PacientesController.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Server\\Controllers\\PacientesController.cs",
+              "RelativeToolTip": "AgendaSaludApp.Server\\Controllers\\PacientesController.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAcwFgAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:06:26.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ResponseApi.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Server\\Common\\ResponseApi.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Server\\Common\\ResponseApi.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Server\\Common\\ResponseApi.cs",
+              "RelativeToolTip": "AgendaSaludApp.Server\\Common\\ResponseApi.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T20:58:54.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "IPacienteRespository.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\Intefaces\\IPacienteRespository.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\Intefaces\\IPacienteRespository.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\Intefaces\\IPacienteRespository.cs",
+              "RelativeToolTip": "AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\Intefaces\\IPacienteRespository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAYwAwAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T18:09:26.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "IPacientesService.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Services\\Intefaces\\IPacientesService.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Services\\Intefaces\\IPacientesService.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Services\\Intefaces\\IPacientesService.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Services\\Intefaces\\IPacientesService.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAWwAkAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:35:28.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\GenericRepository.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\GenericRepository.cs",
+              "RelativeToolTip": "AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\GenericRepository.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAwwFMAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:33:34.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "IProfesionalRepository.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\Intefaces\\IProfesionalRepository.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\Intefaces\\IProfesionalRepository.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\Intefaces\\IProfesionalRepository.cs",
+              "RelativeToolTip": "AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\Intefaces\\IProfesionalRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T19:20:53.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "IGenericRepository.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\Intefaces\\IGenericRepository.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\Intefaces\\IGenericRepository.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\Intefaces\\IGenericRepository.cs",
+              "RelativeToolTip": "AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\Intefaces\\IGenericRepository.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:32:54.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "ProfesionalRepository.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\ProfesionalRepository.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\ProfesionalRepository.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\ProfesionalRepository.cs",
+              "RelativeToolTip": "AgendaSaludApp.Infrastructure\\Persistence\\Repositories\\ProfesionalRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAQwBUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T19:21:04.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "AgendaSaludDBContext.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Infrastructure\\Persistence\\Context\\AgendaSaludDBContext.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Infrastructure\\Persistence\\Context\\AgendaSaludDBContext.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Infrastructure\\Persistence\\Context\\AgendaSaludDBContext.cs",
+              "RelativeToolTip": "AgendaSaludApp.Infrastructure\\Persistence\\Context\\AgendaSaludDBContext.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA7wBIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:25:54.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "AddInfrastructureServices.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Infrastructure\\IOC\\AddInfrastructureServices.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Infrastructure\\IOC\\AddInfrastructureServices.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Infrastructure\\IOC\\AddInfrastructureServices.cs",
+              "RelativeToolTip": "AgendaSaludApp.Infrastructure\\IOC\\AddInfrastructureServices.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAwwBQAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T02:03:39.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "ICredencialService.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Services\\Intefaces\\ICredencialService.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Services\\Intefaces\\ICredencialService.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Services\\Intefaces\\ICredencialService.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Services\\Intefaces\\ICredencialService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T12:42:23.16Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "TurnoConfiguration.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\TurnoConfiguration.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Configurations\\TurnoConfiguration.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\TurnoConfiguration.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Configurations\\TurnoConfiguration.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T13:27:20.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "TurnoDetalleConfiguration.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\TurnoDetalleConfiguration.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Configurations\\TurnoDetalleConfiguration.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\TurnoDetalleConfiguration.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Configurations\\TurnoDetalleConfiguration.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAkwBYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T13:27:24.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "MotivoConfiguration.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\MotivoConfiguration.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\Configurations\\MotivoConfiguration.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\Configurations\\MotivoConfiguration.cs",
+              "RelativeToolTip": "AgendaSaludApp.Core\\Configurations\\MotivoConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T13:26:59.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "AgendaSaludApp.Core",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj",
+              "RelativeToolTip": "AgendaSaludApp.Core\\AgendaSaludApp.Core.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-04T01:13:12.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "CredencialDto.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\CredencialDto.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Dtos\\CredencialDto.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\CredencialDto.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Dtos\\CredencialDto.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAA5wA8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T11:21:59.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "ObraSocialDto.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\ObraSocialDto.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Dtos\\ObraSocialDto.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\ObraSocialDto.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Dtos\\ObraSocialDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T11:22:09.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "HorarioDto.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\HorarioDto.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Dtos\\HorarioDto.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\HorarioDto.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Dtos\\HorarioDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T11:20:13.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "ProfesionalDto.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\ProfesionalDto.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Dtos\\ProfesionalDto.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\ProfesionalDto.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Dtos\\ProfesionalDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T11:20:29.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "TurnoDto.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\TurnoDto.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Dtos\\TurnoDto.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\TurnoDto.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Dtos\\TurnoDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T11:19:34.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "PacienteResumenDto.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\PacienteResumenDto.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Dtos\\PacienteResumenDto.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Dtos\\PacienteResumenDto.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Dtos\\PacienteResumenDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T11:19:29.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "ITurnosService.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Services\\Intefaces\\ITurnosService.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Services\\Intefaces\\ITurnosService.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Services\\Intefaces\\ITurnosService.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Services\\Intefaces\\ITurnosService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:34:55.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "IProfesionalesService.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Services\\Intefaces\\IProfesionalesService.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Services\\Intefaces\\IProfesionalesService.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Services\\Intefaces\\IProfesionalesService.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Services\\Intefaces\\IProfesionalesService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:35:10.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "PacienteDto.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Infrastructure\\Dtos\\PacienteDto.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Infrastructure\\Dtos\\PacienteDto.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Infrastructure\\Dtos\\PacienteDto.cs",
+              "RelativeToolTip": "AgendaSaludApp.Infrastructure\\Dtos\\PacienteDto.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwA0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T11:12:54.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "TurnosService.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Services\\TurnosService.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Services\\TurnosService.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Services\\TurnosService.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Services\\TurnosService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:36:19.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "ProfesionalesService.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Services\\ProfesionalesService.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Application\\Services\\ProfesionalesService.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Application\\Services\\ProfesionalesService.cs",
+              "RelativeToolTip": "AgendaSaludApp.Application\\Services\\ProfesionalesService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:36:11.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "ProfesionalesController.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Server\\Controllers\\ProfesionalesController.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Server\\Controllers\\ProfesionalesController.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Server\\Controllers\\ProfesionalesController.cs",
+              "RelativeToolTip": "AgendaSaludApp.Server\\Controllers\\ProfesionalesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:06:04.219Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "TurnosController.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Server\\Controllers\\TurnosController.cs",
+              "RelativeDocumentMoniker": "AgendaSaludApp.Server\\Controllers\\TurnosController.cs",
+              "ToolTip": "C:\\Proyectos\\AgendaSaludApp\\AgendaSaludApp.Server\\Controllers\\TurnosController.cs",
+              "RelativeToolTip": "AgendaSaludApp.Server\\Controllers\\TurnosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T01:05:29.646Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
