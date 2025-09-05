@@ -1,1 +1,0 @@
-C:\Proyectos\AgendaSaludApp\agendasaludapp.client\obj\Debug\agendasaludapp.client.esproj.CoreCompileInputs.cache
