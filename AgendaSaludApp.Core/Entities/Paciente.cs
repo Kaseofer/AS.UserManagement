@@ -11,7 +11,7 @@ namespace AgendaSaludApp.Core.Entities
 
         public string Apellido { get; set; }
 
-        public string Dni { get; set; }
+        public int Dni { get; set; }
 
         public DateOnly FechaNacimiento { get; set; }
 
@@ -27,6 +27,14 @@ namespace AgendaSaludApp.Core.Entities
 
         public bool Activo { get; set; } = true;
 
-        public Credencial Credencial { get; set; }
+        public int ObraSocialId { get; set; }
+        public ObraSocial ObraSocial { get; set; }
+
+        public string NroAfiliado { get; set; }
+        public string Plan { get; set; }
+
+        public bool EsPrivado { get; set; }
+
+        public ICollection<AgendaCitas> Citas { get; set; }
     }
 }

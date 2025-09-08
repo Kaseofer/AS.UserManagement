@@ -1,16 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AgendaSaludApp.Core.Entities
+namespace AgendaSaludApp.Application.Dtos
 {
-    public class Motivo
+    public class MotivoCitaDto
     {
         [Key]
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public bool Activo { get; set; }
-
-
-        public ICollection<TurnoDetalle> DetallesNavigation { get; set; }
     }
 }

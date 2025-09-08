@@ -14,11 +14,12 @@ namespace AgendaSaludApp.Core.Configurations
 
             // Configurar la relación uno a uno entre Paciente y Credencial
 
-            builder.HasOne(p => p.Credencial)
-                .WithOne(c => c.Paciente)
-                .HasForeignKey<Credencial>(c => c.PacienteId)
+            builder.HasOne(p => p.ObraSocial)
+                .WithMany(c => c.PacienteAfiliados)
+                .HasForeignKey(c => c.ObraSocialId)
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Cascade);
+
         }
     }
 }

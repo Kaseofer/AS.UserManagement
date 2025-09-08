@@ -15,8 +15,7 @@ namespace AgendaSaludApp.Application.Dtos
         public string Apellido { get; set; }
 
         [Required(ErrorMessage = "El DNI es obligatorio")]
-        [MaxLength(20, ErrorMessage = "Máximo 20 caracteres")]
-        public string Dni { get; set; }
+        public int Dni { get; set; }
 
         [Required(ErrorMessage = "La fecha de nacimiento es obligatoria")]
         public DateOnly FechaNacimiento { get; set; }
@@ -39,6 +38,14 @@ namespace AgendaSaludApp.Application.Dtos
         public string Observaciones { get; set; }
 
         public bool Activo { get; set; } = true;
+
+        public int ObraSocialId { get; set; }
+        public ObraSocialDto ObraSocial { get; set; }
+
+        public string NroAfiliado { get; set; }
+        public string Plan { get; set; }
+
+        public bool EsPrivado { get; set; } 
     }
 
 }

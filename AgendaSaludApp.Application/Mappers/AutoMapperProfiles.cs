@@ -10,26 +10,24 @@ namespace AgendaSaludApp.Application.Mappers
         {
             // Paciente
             CreateMap<Paciente, PacienteDto>().ReverseMap();
-            CreateMap<Paciente, PacienteResumenDto>();
 
             // Turno
-            CreateMap<Turno, TurnoDto>().ReverseMap();
-            CreateMap<TurnoDetalle, TurnoDetalleDto>().ReverseMap();
+            CreateMap<AgendaCitas, AgendaCitasDto>().ReverseMap();
+
 
             // Profesional
             CreateMap<Profesional, ProfesionalDto>().ReverseMap();
-            CreateMap<ProfesionalHorario, HorarioDto>().ReverseMap();
+            CreateMap<ProfesionalHorario, ProfesionalHorarioDto>().ReverseMap();
 
             // Especialidad
             CreateMap<Especialidad, EspecialidadDto>().ReverseMap();
 
             // Motivo y Estado
-            CreateMap<Motivo, MotivoDto>().ReverseMap();
-            CreateMap<EstadoTurno, EstadoTurnoDto>().ReverseMap();
+            CreateMap<MotivoCita, MotivoCitaDto>().ReverseMap();
+            CreateMap<EstadoCita, EstadoCitaDto>().ReverseMap();
 
             // Obra Social
             CreateMap<ObraSocial, ObraSocialDto>().ReverseMap();
-            CreateMap<Credencial, CredencialDto>().ReverseMap();
         }
     }
 

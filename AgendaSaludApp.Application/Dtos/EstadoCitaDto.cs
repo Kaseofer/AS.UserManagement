@@ -1,6 +1,7 @@
 ﻿namespace AgendaSaludApp.Application.Dtos
 {
-    internal class MotivoDto
+    public class EstadoCitaDto
     {
+
     }
 }

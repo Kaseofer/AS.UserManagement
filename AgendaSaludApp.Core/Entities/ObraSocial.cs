@@ -10,6 +10,6 @@ namespace AgendaSaludApp.Core.Entities
         public string Tipo { get; set; }
         public string Descripcion { get; set; }
 
-        public IEnumerable<Credencial> Credenciales { get; internal set; }
+        public IEnumerable<Paciente> PacienteAfiliados { get; internal set; }
     }
 }

@@ -10,19 +10,16 @@ namespace AgendaSaludApp.Infrastructure.Persistence.Context
 
         public DbSet<Profesional> Profesionales { get; set; }
         public DbSet<Especialidad> Especialidades { get; set; }
-        public DbSet<Turno> Turnos { get; set; }
-        public DbSet<TurnoDetalle> TurnosDetalle { get; set; }
-        public DbSet<EstadoTurno> EstadosTurno { get; set; }
-        public DbSet<Motivo> Motivos { get; set; }
+        public DbSet<AgendaCitas> Turnos { get; set; }
+        public DbSet<EstadoCita> EstadosTurno { get; set; }
+        public DbSet<MotivoCita> Motivos { get; set; }
         public DbSet<ProfesionalHorario> HorariosProfesional { get; set; }
         public DbSet<Paciente> Pacientes { get; set; }
-        public DbSet<Credencial> CoberturasPaciente { get; set; }
         public DbSet<ObraSocial> ObrasSociales { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Aplicar las configuraciones de las entidades
-            modelBuilder.ApplyConfiguration(new CredencialConfiguration());
 
             modelBuilder.ApplyConfiguration(new EspecialidadConfiguration());
             modelBuilder.ApplyConfiguration(new EstadoTurnoConfiguration());
@@ -31,10 +28,7 @@ namespace AgendaSaludApp.Infrastructure.Persistence.Context
             modelBuilder.ApplyConfiguration(new PacienteConfiguration());
             modelBuilder.ApplyConfiguration(new ProfesionalConfiguration());
             modelBuilder.ApplyConfiguration(new ProfesionalHorarioConfiguration());
-            modelBuilder.ApplyConfiguration(new TurnoConfiguration());
-            modelBuilder.ApplyConfiguration(new TurnoDetalleConfiguration());
-
-
+            modelBuilder.ApplyConfiguration(new AgendaCitasConfiguration());
 
         }
     }

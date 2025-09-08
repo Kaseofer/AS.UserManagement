@@ -12,7 +12,7 @@ namespace AgendaSaludApp.Core.Configurations
 
             builder.HasKey(o => o.Id);
 
-            builder.HasMany(c => c.Credenciales)
+            builder.HasMany(c => c.PacienteAfiliados)
                    .WithOne(o => o.ObraSocial)
                    .HasForeignKey(o => o.ObraSocialId)
                    .OnDelete(DeleteBehavior.Cascade);

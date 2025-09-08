@@ -1,14 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AgendaSaludApp.Application.Dtos
+namespace AgendaSaludApp.Core.Entities
 {
-    public class ObraSocialDto
+    public class EstadoCita
     {
         [Key]
         public int Id { get; set; }
         public string Nombre { get; set; }
-        public string Tipo { get; set; }
         public string Descripcion { get; set; }
-
+        public string ColorHex { get; set; }
     }
 }

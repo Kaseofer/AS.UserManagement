@@ -13,10 +13,7 @@ namespace AgendaSaludApp.Core.Configurations
 
             builder.HasKey(ph => ph.Id);
 
-            builder.HasOne(ph => ph.Profesional)
-                   .WithMany(p => p.Horarios)
-                   .HasForeignKey(ph => ph.ProfesionalId)
-                   .OnDelete(DeleteBehavior.Restrict); 
+            
 
                    
         }

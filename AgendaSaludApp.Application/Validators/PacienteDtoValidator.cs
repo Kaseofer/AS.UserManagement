@@ -15,9 +15,6 @@ namespace AgendaSaludApp.Application.Validators
                 .NotEmpty().WithMessage("El apellido es obligatorio")
                 .MaximumLength(100).WithMessage("Máximo 100 caracteres");
 
-            RuleFor(x => x.Dni)
-                .NotEmpty().WithMessage("El DNI es obligatorio")
-                .MaximumLength(20).WithMessage("Máximo 20 caracteres");
 
             RuleFor(x => x.FechaNacimiento)
                 .NotEmpty().WithMessage("La fecha de nacimiento es obligatoria")

@@ -1,5 +1,6 @@
 ﻿using AgendaSaludApp.Api.Common;
 using AgendaSaludApp.Application.Dtos;
+using AgendaSaludApp.Application.Dtos.Filtros;
 using AgendaSaludApp.Application.Services;
 using AgendaSaludApp.Application.Services.Intefaces;
 using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
@@ -13,12 +14,12 @@ namespace AgendaSaludApp.Api.Controllers
     public class PacientesController : ControllerBase
     {
         private readonly IPacientesService _pacientesService;
-        private readonly ICredencialService _credencialService;
 
-        public PacientesController(IPacientesService pacientesService, ICredencialService credencialService)
+
+        public PacientesController(IPacientesService pacientesService)
         {
             _pacientesService = pacientesService;
-            _credencialService = credencialService;
+
         }
 
         [HttpGet("{id}")]
@@ -28,7 +29,7 @@ namespace AgendaSaludApp.Api.Controllers
             var response = new ResponseApi<PacienteDto>();
             try
             {
-                var Paciente = await _pacientesService.ObtenerPacienteByIdAsync(id);
+                var Paciente = await _pacientesService.GetByIdAsync(id);
 
                 if (Paciente == null)
                 {
@@ -67,7 +68,7 @@ namespace AgendaSaludApp.Api.Controllers
 
             try
             {
-                var pacienteCreado = await _pacientesService.CreatePacienteAsync(pacienteDto);
+                var pacienteCreado = await _pacientesService.CreateAsync(pacienteDto);
                 if (pacienteCreado == null)
                 {
                     response.IsSuccess = false;
@@ -88,13 +89,13 @@ namespace AgendaSaludApp.Api.Controllers
         }
 
         [HttpGet]
-        [Route("Lista")]
+        [Route("All")]
         public async Task<IActionResult> Lista()
         {
             var response = new ResponseApi<List<PacienteDto>>();
             try
             {
-                var pacientes = await _pacientesService.ObtenerTodosPacientesAsync();
+                var pacientes = await _pacientesService.GetAllAsync();
                 response.IsSuccess = true;
                 response.Data = pacientes.ToList();
                 response.Message = "Lista de pacientes obtenida exitosamente";
@@ -110,29 +111,31 @@ namespace AgendaSaludApp.Api.Controllers
         }
 
         [HttpPost]
-        [Route("Credencial/Create")]
-        public async Task<IActionResult> CreateCredencial([FromBody] CredencialDto credencialDto)
+        [Route("Find")]
+        public async Task<IActionResult> Buscar([FromBody] PacienteFiltroDto pacienteFiltroDto)
         {
-            var response = new ResponseApi<CredencialDto>();
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+            var response = new ResponseApi<IEnumerable<PacienteDto>>();
+
             try
             {
-                var nuevaCredencial = await _credencialService.CreateCredencialAsync(credencialDto);
+                var pacientes = await _pacientesService.FindAsync(pacienteFiltroDto);
 
                 response.IsSuccess = true;
-                response.Data = nuevaCredencial;
-                response.Message = "Credencial creada exitosamente";
+                response.Data = pacientes;
+                response.Message = "consulta exitosa";
+
                 return Ok(response);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
+
                 response.IsSuccess = false;
-                response.Message = ex.Message;
-
-                return BadRequest(response);
-
+                response.Message = "Error al procesar la solicitud" + e.Message;
+                BadRequest(response);
             }
+            return Ok();
+            
         }
+
     }
 }

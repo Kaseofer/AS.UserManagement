@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AgendaSaludApp.Core.Configurations
 {
-    public class EstadoTurnoConfiguration : IEntityTypeConfiguration<EstadoTurno>
+    public class EstadoTurnoConfiguration : IEntityTypeConfiguration<EstadoCita>
     {
-        public void Configure(EntityTypeBuilder<EstadoTurno> builder)
+        public void Configure(EntityTypeBuilder<EstadoCita> builder)
         {
             builder.ToTable("estado_turno", "agendasalud");
 

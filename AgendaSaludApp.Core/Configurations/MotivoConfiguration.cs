@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AgendaSaludApp.Core.Configurations
 {
-    public class MotivoConfiguration : IEntityTypeConfiguration<Motivo>
+    public class MotivoConfiguration : IEntityTypeConfiguration<MotivoCita>
     {
-        public void Configure(EntityTypeBuilder<Motivo> builder)
+        public void Configure(EntityTypeBuilder<MotivoCita> builder)
         {
             builder.ToTable("motivo", "agendasalud");
 
