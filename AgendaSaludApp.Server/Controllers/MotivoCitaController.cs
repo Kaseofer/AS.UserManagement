@@ -1,7 +1,9 @@
 ﻿using AgendaSaludApp.Api.Common;
+using AgendaSaludApp.Application.Common;
 using AgendaSaludApp.Application.Dtos;
 using AgendaSaludApp.Application.Services;
 using AgendaSaludApp.Application.Services.Intefaces;
+using AgendaSaludApp.Infrastructure.Logger;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,12 +11,14 @@ namespace AgendaSaludApp.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MotivoController : ControllerBase
+    public class MotivoCitaController : ControllerBase
     {
         private readonly IMotivoCitaService _motivoCitaService;
-        public MotivoController(IMotivoCitaService motivoCitaService)
+        private readonly IAppLogger<MotivoCitaController> _logger;
+        public MotivoCitaController(IMotivoCitaService motivoCitaService, IAppLogger<MotivoCitaController> logger)
         {
             _motivoCitaService = motivoCitaService;
+            _logger = logger;
         }
 
         [HttpGet("{id}")]
@@ -33,22 +37,26 @@ namespace AgendaSaludApp.Api.Controllers
                 response.IsSuccess = true;
                 response.Data = motivo;
                 response.Message = "Motivo encontrado";
+
                 return Ok(response);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 response.IsSuccess = false;
-                response.Message = "Error al procesar la solicitud";
-                BadRequest(response);
+                response.Message = ExceptionHelper.GetFullMessage(ex);
+
+                _logger.LogError("MotivoCita GetID:", ex, id);
+
+                return BadRequest(response);
             }
-            return Ok();
+            
         }
 
         [HttpGet]
         [Route("All")]
         public async Task<IActionResult> GetAll()
         {
-            var response = new ResponseApi<IEnumerable<MotivoCitaDto>>();
+            var response = new ResponseApi<List<MotivoCitaDto>>();
             try
             {
                 var motivos = await _motivoCitaService.GetAllAsync();
@@ -57,13 +65,14 @@ namespace AgendaSaludApp.Api.Controllers
                 response.Message = "Motivos obtenidos con éxito";
                 return Ok(response);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 response.IsSuccess = false;
-                response.Message = "Error al procesar la solicitud";
-                BadRequest(response);
+                response.Message = ExceptionHelper.GetFullMessage(ex);
+                _logger.LogError("MotivoCita GetAll:", ex);
+
+                return BadRequest(response);
             }
-            return Ok();
         }
     }
 }

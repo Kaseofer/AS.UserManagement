@@ -1,6 +1,8 @@
 ﻿using AgendaSaludApp.Api.Common;
+using AgendaSaludApp.Application.Common;
 using AgendaSaludApp.Application.Dtos;
 using AgendaSaludApp.Application.Services.Intefaces;
+using AgendaSaludApp.Infrastructure.Logger;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,10 +13,13 @@ namespace AgendaSaludApp.Api.Controllers
     public class EspecialidadController : ControllerBase
     {
         private readonly IEspecialidadService _especialidadService;
-        public EspecialidadController(IEspecialidadService especialidadService)
+        private readonly IAppLogger<EspecialidadController> _logger;
+        public EspecialidadController(IEspecialidadService especialidadService, IAppLogger<EspecialidadController> logger)
         {
             _especialidadService = especialidadService;
+            _logger = logger;
         }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -33,46 +38,23 @@ namespace AgendaSaludApp.Api.Controllers
                 response.Message = "Especialidad encontrada";
                 return Ok(response);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 response.IsSuccess = false;
-                response.Message = "Error al procesar la solicitud";
-                BadRequest(response);
+                response.Message = ExceptionHelper.GetFullMessage(ex);
+
+                _logger.LogError("Especialidad GetID:", ex, id);
+
+                return BadRequest(response);
             }
-            return Ok();
+            
         }
-        [HttpPost]
-        [Route("Create")]
-        public async Task<IActionResult> Create([FromBody] EspecialidadDto especialidadDto)
-        {
-            var response = new ResponseApi<EspecialidadDto>();
-            try
-            {
-                var nuevaEspecialidad = await _especialidadService.CreateAsync(especialidadDto);
-                if (nuevaEspecialidad == null)
-                {
-                    response.IsSuccess = false;
-                    response.Message = "No se pudo crear la especialidad";
-                    return BadRequest(response);
-                }
-                response.IsSuccess = true;
-                response.Data = nuevaEspecialidad;
-                response.Message = "Especialidad creada con éxito";
-                return Ok(response);
-            }
-            catch (Exception)
-            {
-                response.IsSuccess = false;
-                response.Message = "Error al procesar la solicitud";
-                BadRequest(response);
-            }
-            return Ok();
-        }
+
         [HttpGet]
         [Route("All")]
         public async Task<IActionResult> GetAll()
         {
-            var response = new ResponseApi<IEnumerable<EspecialidadDto>>();
+            var response = new ResponseApi<List<EspecialidadDto>>();
             try
             {
                 var especialidades = await _especialidadService.GetAllAsync();
@@ -88,13 +70,49 @@ namespace AgendaSaludApp.Api.Controllers
                 return Ok(response);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 response.IsSuccess = false;
-                response.Message = "Error al procesar la solicitud";
-                BadRequest(response);
+                response.Message = ExceptionHelper.GetFullMessage(ex);
+
+                _logger.LogError("Especialidades GetAll:", ex);
+
+                return BadRequest(response);
             }
-            return Ok();
         }
+
+        [HttpPost]
+        [Route("Create")]
+        public async Task<IActionResult> Create([FromBody] EspecialidadDto especialidadDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var response = new ResponseApi<EspecialidadDto>();
+            try
+            {
+                var nuevaEspecialidad = await _especialidadService.CreateAsync(especialidadDto);
+                if (nuevaEspecialidad == null)
+                {
+                    response.IsSuccess = false;
+                    response.Message = "No se pudo crear la especialidad";
+                    return BadRequest(response);
+                }
+                response.IsSuccess = true;
+                response.Data = nuevaEspecialidad;
+                response.Message = "Especialidad creada con éxito";
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = ExceptionHelper.GetFullMessage(ex);
+
+                _logger.LogError("Especialidad Create:", ex, especialidadDto);
+
+                return BadRequest(response);
+            }
+        }
+
     }
 }

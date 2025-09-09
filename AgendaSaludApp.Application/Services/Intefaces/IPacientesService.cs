@@ -8,16 +8,17 @@ namespace AgendaSaludApp.Application.Services.Intefaces
     {
         
         Task<PacienteDto?> GetByIdAsync(int id);
-        Task<IEnumerable<PacienteDto>> GetAllAsync();
+        Task<List<PacienteDto>> GetAllAsync();
 
         Task<PacienteDto> CreateAsync(PacienteDto paciente);
 
         Task<bool> UpdateAsync(PacienteDto paciente);
 
-        Task<bool> RemoveAsync(int id);
+        Task<bool> DeleteAsync(int id);
 
         Task<PacienteDto?> GetByDniAsync(int dni);
 
-        Task<IEnumerable<PacienteDto>> FindAsync(PacienteFiltroDto filtro);
+        Task<List<PacienteDto>> FindAsync(PacienteFiltroDto filtro);
+
     }
 }

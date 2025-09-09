@@ -9,7 +9,7 @@ namespace AgendaSaludApp.Core.Entities
         public string Nombre { get; set; }
         public string NombreCorto { get; set; }
         public string Descripcion { get; set; }
-        public string ImagenUrl { get; set; }
+        public string? ImagenUrl { get; set; }
 
         public ICollection<Profesional> Profesionales { get; set; }
     }

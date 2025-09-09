@@ -9,6 +9,6 @@ namespace AgendaSaludApp.Application.Dtos
         public string Nombre { get; set; }
         public string NombreCorto { get; set; }
         public string Descripcion { get; set; }
-        public string ImagenUrl { get; set; }
+        public string? ImagenUrl { get; set; }
     }
 }

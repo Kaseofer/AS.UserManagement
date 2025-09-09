@@ -1,7 +1,9 @@
 ﻿using AgendaSaludApp.Api.Common;
+using AgendaSaludApp.Application.Common;
 using AgendaSaludApp.Application.Dtos;
+using AgendaSaludApp.Application.Dtos.Filtros;
 using AgendaSaludApp.Application.Services.Intefaces;
-using Microsoft.AspNetCore.Http;
+using AgendaSaludApp.Infrastructure.Logger;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgendaSaludApp.Api.Controllers
@@ -11,10 +13,64 @@ namespace AgendaSaludApp.Api.Controllers
     public class ProfesionalController : ControllerBase
     {
         private readonly IProfesionalesService  _profesionalService;
+        private readonly IProfesionalHorariosService _profesionalHorariosService;
+        private readonly IAppLogger<ProfesionalController> _logger;
 
-        public ProfesionalController(IProfesionalesService profesionalesService)
+        public ProfesionalController(IProfesionalesService profesionalesService,
+                                     IAppLogger<ProfesionalController> logger,
+                                     IProfesionalHorariosService profesionalHorariosService)
         {
             _profesionalService = profesionalesService;
+            _logger = logger;
+            _profesionalHorariosService = profesionalHorariosService;
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> Get(int id)
+        { 
+            var response = new ResponseApi<ProfesionalDto>();
+
+            try
+            {
+
+                response.Data = await _profesionalService.GetByIdAsync(id); 
+                response.IsSuccess = true;
+                response.Message = "Profesional encontrado";
+                
+                return Ok(response);
+
+            }
+            catch (Exception e)
+            {
+                response.IsSuccess = false;
+                response.Message = ExceptionHelper.GetFullMessage(e);
+                _logger.LogError("Profesional GetID:", e, id);
+
+                return BadRequest(response);
+            }
+        }
+
+        [HttpGet]
+        [Route("All")]
+        public async Task<IActionResult> GetAll()
+        {
+            var response = new ResponseApi<List<ProfesionalDto>>();
+            try
+            {
+                response.IsSuccess = true;
+                response.Data = await _profesionalService.GetAllAsync();
+                response.Message = "Consulta Exitosa";
+                return Ok(response);
+            }
+            catch (Exception e)
+            {
+                response.IsSuccess = false;
+                response.Message = ExceptionHelper.GetFullMessage(e);
+                _logger.LogError("Profesional GetAll:", e);
+
+                return BadRequest(response);
+            }
         }
 
         [HttpPost]
@@ -22,22 +78,16 @@ namespace AgendaSaludApp.Api.Controllers
 
         public async Task<IActionResult> Create([FromBody] ProfesionalDto profesionalDto)
         {
-            
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             var response = new ResponseApi<ProfesionalDto>();
 
             try
             {
-                var profesionalCreado = await _profesionalService.CreateAsync(profesionalDto);
-
-                if (profesionalCreado == null)
-                {
-                    response.IsSuccess = false;
-                    response.Message = "No se pudo crear el paciente";
-                    return BadRequest(response);
-                }
-
                 response.IsSuccess = true;
-                response.Data = profesionalCreado;
+                response.Data = await _profesionalService.CreateAsync(profesionalDto);
                 response.Message = "Alta Profesional Exitosa";
 
                 return Ok(response);
@@ -46,11 +96,156 @@ namespace AgendaSaludApp.Api.Controllers
             catch (Exception e)
             {
                 response.IsSuccess = false;
-                response.Message = "Alta Profesional ERROR " + e.Message;
+                response.Message = ExceptionHelper.GetFullMessage(e);
+
+                _logger.LogError("Profesional Create", e ,profesionalDto);
 
                 return BadRequest(response);
             }
 
+        }
+        [HttpPut]
+        [Route("Update")]
+        public async Task<IActionResult> Update([FromBody] ProfesionalDto profesionalDto)
+        {
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var rsp = new ResponseApi<bool>();
+
+            try
+            {               
+                rsp.IsSuccess = true;
+                rsp.Data = await _profesionalService.UpdateAsync(profesionalDto);               
+                rsp.Message = "Modificación Profesional Exitosa";
+
+                return Ok(rsp);
+            }
+            catch (Exception e)
+            {
+                rsp.IsSuccess = false;
+                rsp.Message = ExceptionHelper.GetFullMessage(e);
+
+                _logger.LogError("Profesional Update", e, profesionalDto);
+
+                return BadRequest(rsp);
+            }
+        }
+
+        [HttpDelete]
+        [Route("Delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var rsp = new ResponseApi<bool>();
+            try
+            {               
+                rsp.IsSuccess = true;
+                rsp.Data = await _profesionalService.DeleteAsync(id);               
+                rsp.Message = "Baja Profesional Exitosa";
+                return Ok(rsp);
+            }
+            catch (Exception e)
+            {
+                rsp.IsSuccess = false;
+                rsp.Message = ExceptionHelper.GetFullMessage(e);
+
+                _logger.LogError("Profesional Delete", e, id);
+
+                return BadRequest(rsp);
+            }
+        }
+
+        [HttpPost]
+        [Route("Find")]
+        public async Task<IActionResult> Find([FromBody] ProfesionalFiltroDto filter)
+        {
+            var response = new ResponseApi<List<ProfesionalDto>>();
+            try
+            {
+                response.IsSuccess = true;
+                response.Data = await _profesionalService.FindAsync(filter);
+                response.Message = "Consulta Exitosa";
+                return Ok(response);
+            }
+            catch (Exception e)
+            {
+                response.IsSuccess = false;
+                response.Message = ExceptionHelper.GetFullMessage(e);
+                _logger.LogError("Profesional Find:", e, filter);
+
+                return BadRequest(response);
+            }
+        }
+
+        [HttpPost]
+        [Route("Horario/Create")]
+        public async Task<IActionResult> CreateHorario([FromBody] ProfesionalHorariosDto profesionalHorarioDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var response = new ResponseApi<ProfesionalHorariosDto>();
+            try
+            {
+                response.IsSuccess = true;
+                response.Data = await _profesionalHorariosService.CreateAsync(profesionalHorarioDto);
+                response.Message = "Alta Horario Profesional Exitosa";
+                return Ok(response);
+            }
+            catch (Exception e)
+            {
+                response.IsSuccess = false;
+                response.Message = ExceptionHelper.GetFullMessage(e);
+                _logger.LogError("Profesional CreateHorario", e, profesionalHorarioDto);
+               
+                return BadRequest(response);
+            }
+        }
+
+        [HttpPut]
+        [Route("Horario/Update")]
+        public async Task<IActionResult> UpdateHorario([FromBody] ProfesionalHorariosDto profesionalHorarioDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var response = new ResponseApi<bool>();
+            try
+            {
+                response.IsSuccess = true;
+                response.Data = await _profesionalHorariosService.UpdateAsync(profesionalHorarioDto);
+                response.Message = "Modificación Horario Profesional Exitosa";
+                return Ok(response);
+            }
+            catch (Exception e)
+            {
+                response.IsSuccess = false;
+                response.Message = ExceptionHelper.GetFullMessage(e);
+                _logger.LogError("Profesional UpdateHorario", e, profesionalHorarioDto);
+                return BadRequest(response);
+            }
+        }
+
+        [HttpDelete]
+        [Route("Horario/Delete/{id}")]
+        public async Task<IActionResult> DeleteHorario(int id)
+        {
+            var response = new ResponseApi<bool>();
+            try
+            {
+                response.IsSuccess = true;
+                response.Data = await _profesionalHorariosService.DeleteAsync(id);
+                response.Message = "Baja Horario Profesional Exitosa";
+                return Ok(response);
+            }
+            catch (Exception e)
+            {
+                response.IsSuccess = false;
+                response.Message = ExceptionHelper.GetFullMessage(e);
+                _logger.LogError("Profesional DeleteHorario", e, id);
+                return BadRequest(response);
+            }
         }
     }
 }

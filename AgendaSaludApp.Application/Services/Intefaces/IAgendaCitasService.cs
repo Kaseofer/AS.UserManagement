@@ -13,11 +13,14 @@ namespace AgendaSaludApp.Application.Services.Intefaces
 
         Task<AgendaCitasDto> CreateAsync(AgendaCitasDto agendaCitasDto);
 
-        Task<IEnumerable<AgendaCitasDto>> GetAllAsync();
+        Task<List<AgendaCitasDto>> GetAllAsync();
         
         Task<AgendaCitasDto?> GetByIdAsync(int id);
 
-        Task<IEnumerable<AgendaCitasDto>> FindAsync(AgendaCitaFiltroDto filtro);
+        Task<List<AgendaCitasDto>> FindAsync(AgendaCitaFiltroDto filtro);
 
+        Task<bool> UpdateAsync(AgendaCitasDto agendaCitasDto);
+
+        Task<bool> DeleteAsync(int id);
     }
 }

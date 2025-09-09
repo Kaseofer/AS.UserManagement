@@ -17,7 +17,8 @@ namespace AgendaSaludApp.Application.Mappers
 
             // Profesional
             CreateMap<Profesional, ProfesionalDto>().ReverseMap();
-            CreateMap<ProfesionalHorario, ProfesionalHorarioDto>().ReverseMap();
+
+            CreateMap<ProfesionalHorarios, ProfesionalHorariosDto>().ReverseMap();
 
             // Especialidad
             CreateMap<Especialidad, EspecialidadDto>().ReverseMap();

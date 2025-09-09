@@ -1,10 +1,9 @@
 ﻿using AgendaSaludApp.Api.Common;
+using AgendaSaludApp.Application.Common;
 using AgendaSaludApp.Application.Dtos;
 using AgendaSaludApp.Application.Dtos.Filtros;
-using AgendaSaludApp.Application.Services;
 using AgendaSaludApp.Application.Services.Intefaces;
-using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
-using Microsoft.AspNetCore.Http;
+using AgendaSaludApp.Infrastructure.Logger;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgendaSaludApp.Api.Controllers
@@ -14,12 +13,13 @@ namespace AgendaSaludApp.Api.Controllers
     public class PacientesController : ControllerBase
     {
         private readonly IPacientesService _pacientesService;
+        protected readonly IAppLogger<PacientesController> _logger;
 
 
-        public PacientesController(IPacientesService pacientesService)
+        public PacientesController(IPacientesService pacientesService, IAppLogger<PacientesController> logger)
         {
             _pacientesService = pacientesService;
-
+            _logger = logger;
         }
 
         [HttpGet("{id}")]
@@ -42,18 +42,42 @@ namespace AgendaSaludApp.Api.Controllers
                 response.Data = Paciente;
                 response.Message = "Paciente encontrado";
                 return Ok(response);
-            }
-            catch (Exception)
+            } 
+            catch (Exception ex)
             {
-
                 response.IsSuccess = false;
-                response.Message = "Error al procesar la solicitud";
+                response.Message = ExceptionHelper.GetFullMessage(ex);
 
-                BadRequest(response);
+                _logger.LogError("Paciente GetId", ex, id);
+
+                return BadRequest(response);
             }
-
-            return Ok();
         }
+
+
+        [HttpGet]
+        [Route("All")]
+        public async Task<IActionResult> GetAll()
+        {
+            var response = new ResponseApi<List<PacienteDto>>();
+            try
+            {
+                response.IsSuccess = true;
+                response.Data = await _pacientesService.GetAllAsync();
+                response.Message = "Lista de pacientes obtenida exitosamente";
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = ExceptionHelper.GetFullMessage(ex);
+
+                _logger.LogError("Paciente GetAll", ex);
+
+                return BadRequest(response);
+            }
+        }
+
 
         [HttpPost]
         [Route("Create")]
@@ -61,60 +85,83 @@ namespace AgendaSaludApp.Api.Controllers
         {
             var response = new ResponseApi<PacienteDto>();
 
-
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-
             try
             {
-                var pacienteCreado = await _pacientesService.CreateAsync(pacienteDto);
-                if (pacienteCreado == null)
-                {
-                    response.IsSuccess = false;
-                    response.Message = "No se pudo crear el paciente";
-                    return BadRequest(response);
-                }
                 response.IsSuccess = true;
-                response.Data = pacienteCreado;
+                response.Data = await _pacientesService.CreateAsync(pacienteDto);
                 response.Message = "Paciente creado exitosamente";
                 return Ok(response);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 response.IsSuccess = false;
-                response.Message = "Error al procesar la solicitud";
+                response.Message = ExceptionHelper.GetFullMessage(ex);
+
+                _logger.LogError("Paciente Create", ex, pacienteDto);
+
+
                 return BadRequest(response);
             }
         }
 
-        [HttpGet]
-        [Route("All")]
-        public async Task<IActionResult> Lista()
+        [HttpPut]
+        [Route("Update")]
+        public async Task<IActionResult> Update([FromBody] PacienteDto pacienteDto)
         {
-            var response = new ResponseApi<List<PacienteDto>>();
+            var response = new ResponseApi<bool>();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             try
             {
-                var pacientes = await _pacientesService.GetAllAsync();
+
                 response.IsSuccess = true;
-                response.Data = pacientes.ToList();
-                response.Message = "Lista de pacientes obtenida exitosamente";
+                response.Data = await _pacientesService.UpdateAsync(pacienteDto);
+                response.Message = "Paciente actualizado exitosamente";
                 return Ok(response);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 response.IsSuccess = false;
-                response.Message = "Error al procesar la solicitud";
-                BadRequest(response);
+                response.Message = ExceptionHelper.GetFullMessage(ex);
+
+                _logger.LogError("Paciente Update", ex, pacienteDto);
+
+                return BadRequest(response);
             }
-            return Ok();
+        }
+
+        [HttpDelete]
+        [Route("Delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var response = new ResponseApi<bool>();
+            try
+            {
+                response.IsSuccess = true;
+                response.Data = await _pacientesService.DeleteAsync(id);
+                response.Message = "Paciente eliminado exitosamente";
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = ExceptionHelper.GetFullMessage(ex);
+               
+                _logger.LogError("Paciente Delete", ex, id);
+
+                return BadRequest(response);
+            }
         }
 
         [HttpPost]
         [Route("Find")]
         public async Task<IActionResult> Buscar([FromBody] PacienteFiltroDto pacienteFiltroDto)
         {
-            var response = new ResponseApi<IEnumerable<PacienteDto>>();
+            var response = new ResponseApi<List<PacienteDto>>();
 
             try
             {
@@ -130,10 +177,12 @@ namespace AgendaSaludApp.Api.Controllers
             {
 
                 response.IsSuccess = false;
-                response.Message = "Error al procesar la solicitud" + e.Message;
-                BadRequest(response);
+                response.Message = ExceptionHelper.GetFullMessage(e);
+               
+                _logger.LogError("Paciente Find", e, pacienteFiltroDto);
+
+                return BadRequest(response);
             }
-            return Ok();
             
         }
 

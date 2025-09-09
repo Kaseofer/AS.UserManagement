@@ -26,14 +26,25 @@ namespace AgendaSaludApp.Application.Services
         {
            var paciente =  await _pacienteRepository.GetByIdAsync(id);
 
+              if (paciente == null)
+                throw new TaskCanceledException("No se encontró el paciente");
+
             return _mapper.Map<PacienteDto>(paciente);
         }
 
-        public async Task<IEnumerable<PacienteDto>> GetAllAsync()
+        public async Task<List<PacienteDto>> GetAllAsync()
         {
-            var pacientes = await _pacienteRepository.GetAllAsync();
+            try
+            {
+                var pacientes = await _pacienteRepository.GetAllAsync();
 
-            return _mapper.Map<IEnumerable<PacienteDto>>(pacientes);
+                return _mapper.Map<List<PacienteDto>>(pacientes);
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+            
 
         }
 
@@ -46,49 +57,82 @@ namespace AgendaSaludApp.Application.Services
 
                 var pacienteNuevo = await _pacienteRepository.AddAsync(_mapper.Map<Paciente>(pacienteDto));
 
+                if(pacienteNuevo.Id == 0)
+                    throw new TaskCanceledException("No se pudo crear el paciente");
+
                 return _mapper.Map<PacienteDto>(pacienteNuevo);
 
             }
-            catch (Exception ex)
-            {
+            catch (Exception e)
+            { 
 
-                return null;
+                throw e;
             }
 
         }
 
         public async Task<bool> UpdateAsync(PacienteDto paciente)
         {
-            var rlt = await _pacienteRepository.UpdateAsync(_mapper.Map<Paciente>(paciente));
+            try
+            {
+                var rlt = await _pacienteRepository.UpdateAsync(_mapper.Map<Paciente>(paciente));
 
-            return rlt;
+                if (rlt == false)
+                    throw new TaskCanceledException("No se pudo actualizar el paciente");
+
+                return rlt;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            
         }
 
-        public async Task<bool> RemoveAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
-            var paciente = await _pacienteRepository.GetByIdAsync(id);
+            try
+            {
+                var paciente = await _pacienteRepository.GetByIdAsync(id);
             
-            if (paciente == null)
-                return false;
+                if (paciente == null)
+                    throw new TaskCanceledException("No se pudo encontrar el paciente");
 
-            paciente.Activo = false;
+                paciente.Activo = false;
             
-            var rlt = await _pacienteRepository.UpdateAsync(paciente);
+                var rlt = await _pacienteRepository.UpdateAsync(paciente);
 
-            return rlt;
+                if (rlt == false)
+                    throw new TaskCanceledException("No se pudo eliminar el paciente");
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+           
         }
 
         public async Task<PacienteDto?> GetByDniAsync(int dni)
         {
-            var paciente = await _pacienteRepository.FindAsync(x => x.Dni == dni && x.Activo);
+            try
+            {
+                var paciente = await _pacienteRepository.FindAsync(x => x.Dni == dni && x.Activo);
 
-            return _mapper.Map<PacienteDto>(paciente.FirstOrDefault());
+                return _mapper.Map<PacienteDto>(paciente.FirstOrDefault());
+            }
+            catch{
 
+                throw;
+            }
         }
 
-        public async Task<IEnumerable<PacienteDto>> FindAsync(PacienteFiltroDto filtro)
+        public async Task<List<PacienteDto>> FindAsync(PacienteFiltroDto filtro)
         {
-            var pacientes = await _pacienteRepository.FindAsync(p =>
+            try
+            {
+                var pacientes = await _pacienteRepository.FindAsync(p =>
                 (string.IsNullOrEmpty(filtro.Nombre) || p.Nombre.Contains(filtro.Nombre)) &&
                 (string.IsNullOrEmpty(filtro.Apellido) || p.Apellido.Contains(filtro.Apellido)) &&
                 (!filtro.Dni.HasValue || p.Dni == filtro.Dni.Value) &&
@@ -97,9 +141,15 @@ namespace AgendaSaludApp.Application.Services
                 (!filtro.Activo.HasValue || p.Activo == filtro.Activo.Value) &&
                 (!filtro.ObraSocialId.HasValue || p.ObraSocialId == filtro.ObraSocialId.Value) &&
                 (!filtro.EsPrivado.HasValue || p.EsPrivado == filtro.EsPrivado.Value)
-            );
+                );
 
-            return _mapper.Map<IEnumerable<PacienteDto>>(pacientes);
+                return _mapper.Map<List<PacienteDto>>(pacientes);
+            }
+            catch
+            {
+                throw;
+            }
+            
         }
     }
 }

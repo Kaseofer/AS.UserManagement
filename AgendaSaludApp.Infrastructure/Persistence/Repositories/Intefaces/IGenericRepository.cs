@@ -9,4 +9,13 @@ public interface IGenericRepository<T> where T : class
     Task<T> AddAsync(T entity);
     Task<bool> UpdateAsync(T entity);
     Task<bool> RemoveAsync(T entity);
+
+
+    Task<List<T>> QueryAsync
+          (Expression<Func<T, bool>>? filtro = null,
+          params string[] includeProperties);
+
+    /*Example of use:
+     var pacientes = await _pacienteRepository.QueryAsync(p => p.Activo == true, includeProperties: "ObraSocial,Profesional");
+     */
 }

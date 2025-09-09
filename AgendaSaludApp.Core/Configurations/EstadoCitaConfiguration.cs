@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AgendaSaludApp.Core.Configurations
 {
-    public class EstadoTurnoConfiguration : IEntityTypeConfiguration<EstadoCita>
+    public class EstadoCitaConfiguration : IEntityTypeConfiguration<EstadoCita>
     {
         public void Configure(EntityTypeBuilder<EstadoCita> builder)
         {
-            builder.ToTable("estado_turno", "agendasalud");
+            builder.ToTable("estado_cita", "agendasalud");
 
             builder.HasKey(e => e.Id);
             

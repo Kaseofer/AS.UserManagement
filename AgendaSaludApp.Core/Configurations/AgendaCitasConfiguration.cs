@@ -8,7 +8,7 @@ namespace AgendaSaludApp.Core.Configurations
     {
         public void Configure(EntityTypeBuilder<AgendaCitas> builder)
         {
-            builder.ToTable("agendacitas", "agendasalud");
+            builder.ToTable("agenda_citas", "agendasalud");
 
             builder.HasKey(a => a.Id);
 

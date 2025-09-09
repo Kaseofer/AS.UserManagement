@@ -2,7 +2,7 @@
 
 namespace AgendaSaludApp.Core.Entities
 {
-    public class ProfesionalHorario
+    public class ProfesionalHorarios
     {
         [Key]
         public int Id { get; set; }

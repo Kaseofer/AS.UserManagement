@@ -10,7 +10,7 @@ namespace AgendaSaludApp.Application.Services.Intefaces
     public interface IObraSocialService
     {
         Task<ObraSocialDto> CreateAsync(ObraSocialDto obraSocialDto);
-        Task<IEnumerable<ObraSocialDto>> GetAllAsync();
+        Task<List<ObraSocialDto>> GetAllAsync();
         Task<ObraSocialDto?> GetByIdAsync(int id);
     }
 }

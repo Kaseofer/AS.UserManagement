@@ -4,15 +4,16 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AgendaSaludApp.Core.Configurations
 {
-    public class ProfesionalHorarioConfiguration : IEntityTypeConfiguration<ProfesionalHorario>
+    public class ProfesionalHorariosConfiguration : IEntityTypeConfiguration<ProfesionalHorarios>
     {
-        public void Configure(EntityTypeBuilder<ProfesionalHorario> builder)
+        public void Configure(EntityTypeBuilder<ProfesionalHorarios> builder)
         {
 
-            builder.ToTable("profesional_horario", "agendasalud");
+            builder.ToTable("profesional_horarios", "agendasalud");
 
             builder.HasKey(ph => ph.Id);
 
+           
             
 
                    

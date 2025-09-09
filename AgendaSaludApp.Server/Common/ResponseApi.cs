@@ -2,7 +2,7 @@
 
 namespace AgendaSaludApp.Api.Common
 {
-    public class ResponseApi<T> where T : class
+    public class ResponseApi<T> 
     {
         public bool IsSuccess { get; set; } = true;
         public string Message { get; internal set; }

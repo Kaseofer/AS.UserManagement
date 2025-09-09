@@ -11,7 +11,7 @@ namespace AgendaSaludApp.Application.Services.Intefaces
     public interface IMotivoCitaService
     {
 
-        Task<IEnumerable<MotivoCitaDto>> GetAllAsync();
+        Task<List<MotivoCitaDto>> GetAllAsync();
 
         Task<MotivoCitaDto?> GetByIdAsync(int id);
     }

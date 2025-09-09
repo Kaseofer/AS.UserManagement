@@ -19,8 +19,9 @@ namespace AgendaSaludApp.Application.IOC
             services.AddScoped<IObraSocialService, ObraSocialService>();
             services.AddScoped<IPacientesService, PacientesService>();
             services.AddScoped<IProfesionalesService, ProfesionalesService>();
+            services.AddScoped<IProfesionalHorariosService, ProfesionalHorariosService>();
 
-            
+
 
             return services;
         }

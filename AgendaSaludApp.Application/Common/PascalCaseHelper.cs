@@ -19,6 +19,14 @@ namespace AgendaSaludApp.Application.Common
         {
             pacienteDto.Nombre = ToPascalCase(pacienteDto.Nombre);
             pacienteDto.Apellido = ToPascalCase(pacienteDto.Apellido);
+            pacienteDto.Email = pacienteDto.Email?.ToLower();
+        }
+
+        public static void NormalizarProfesional(ProfesionalDto profesionalDto)
+        {
+            profesionalDto.Nombre = ToPascalCase(profesionalDto.Nombre);
+            profesionalDto.Apellido = ToPascalCase(profesionalDto.Apellido);
+            profesionalDto.Email = profesionalDto.Email?.ToLower();
         }
     }
 

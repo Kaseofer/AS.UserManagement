@@ -1,7 +1,8 @@
 ﻿using AgendaSaludApp.Api.Common;
+using AgendaSaludApp.Application.Common;
 using AgendaSaludApp.Application.Dtos;
 using AgendaSaludApp.Application.Services.Intefaces;
-using Microsoft.AspNetCore.Http;
+using AgendaSaludApp.Infrastructure.Logger;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgendaSaludApp.Api.Controllers
@@ -11,38 +12,11 @@ namespace AgendaSaludApp.Api.Controllers
     public class ObraSocialController : ControllerBase
     {
         private readonly IObraSocialService _obraSocialService;
-        public ObraSocialController(IObraSocialService obraSocialService)
+        protected readonly IAppLogger<ObraSocialController> _logger;
+        public ObraSocialController(IObraSocialService obraSocialService, IAppLogger<ObraSocialController> logger)
         {
             _obraSocialService = obraSocialService;
-        }
-
-
-        [HttpPost]
-        [Route("Create")]
-        public async Task<IActionResult> Create([FromBody] ObraSocialDto obraSocialDto)
-        {
-            var response = new ResponseApi<ObraSocialDto>();
-            try
-            {
-                var nuevaObraSocial = await _obraSocialService.CreateAsync(obraSocialDto);
-                if (nuevaObraSocial == null)
-                {
-                    response.IsSuccess = false;
-                    response.Message = "No se pudo crear la obra social";
-                    return BadRequest(response);
-                }
-                response.IsSuccess = true;
-                response.Data = nuevaObraSocial;
-                response.Message = "Obra social creada con éxito";
-                return Ok(response);
-            }
-            catch (Exception)
-            {
-                response.IsSuccess = false;
-                response.Message = "Error al procesar la solicitud";
-                BadRequest(response);
-            }
-            return Ok();
+            _logger = logger;
         }
 
         [HttpGet]
@@ -64,11 +38,14 @@ namespace AgendaSaludApp.Api.Controllers
                 response.Message = "Obra social encontrada";
                 return Ok(response);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 response.IsSuccess = false;
-                response.Message = "Error al procesar la solicitud";
-                BadRequest(response);
+                response.Message = ExceptionHelper.GetFullMessage(ex);
+
+                _logger.LogError("ObraSocial GetID:", ex);
+
+                return BadRequest(response);
             }
             return Ok();
         }
@@ -78,7 +55,7 @@ namespace AgendaSaludApp.Api.Controllers
         [Route("All")]
         public async Task<IActionResult> GetAll()
         {
-            var response = new ResponseApi<IEnumerable<ObraSocialDto>>();
+            var response = new ResponseApi<List<ObraSocialDto>>();
             try
             {
                 var obrasSociales = await _obraSocialService.GetAllAsync();
@@ -87,13 +64,43 @@ namespace AgendaSaludApp.Api.Controllers
                 response.Message = "Obras sociales obtenidas con éxito";
                 return Ok(response);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 response.IsSuccess = false;
-                response.Message = "Error al procesar la solicitud";
-                BadRequest(response);
+                response.Message = ExceptionHelper.GetFullMessage(ex);
+
+                _logger.LogError("ObraSocial GetAll: {mensaje}",ex);
+
+                return BadRequest(response);
             }
-            return Ok();
+        }
+
+        [HttpPost]
+        [Route("Create")]
+        public async Task<IActionResult> Create([FromBody] ObraSocialDto obraSocialDto)
+        { 
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var response = new ResponseApi<ObraSocialDto>();
+
+            try
+            {
+                response.IsSuccess = true;
+                response.Data = await _obraSocialService.CreateAsync(obraSocialDto);
+                response.Message = "Obra social creada con éxito";
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = ExceptionHelper.GetFullMessage(ex);
+
+                _logger.LogError("ObraSocial Create", ex, obraSocialDto);
+
+                return BadRequest(response);
+            }
+            
         }
     }
 }

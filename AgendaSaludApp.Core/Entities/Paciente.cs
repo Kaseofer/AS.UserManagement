@@ -21,17 +21,15 @@ namespace AgendaSaludApp.Core.Entities
 
         public string Email { get; set; }
 
-        public string Direccion { get; set; }
-
         public string Observaciones { get; set; }
 
         public bool Activo { get; set; } = true;
 
-        public int ObraSocialId { get; set; }
-        public ObraSocial ObraSocial { get; set; }
+        public int? ObraSocialId { get; set; }
+        public ObraSocial? ObraSocial { get; set; }
 
-        public string NroAfiliado { get; set; }
-        public string Plan { get; set; }
+        public string? NroAfiliado { get; set; }
+        public string? Plan { get; set; }
 
         public bool EsPrivado { get; set; }
 

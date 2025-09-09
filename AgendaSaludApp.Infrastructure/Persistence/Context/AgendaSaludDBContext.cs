@@ -13,7 +13,7 @@ namespace AgendaSaludApp.Infrastructure.Persistence.Context
         public DbSet<AgendaCitas> Turnos { get; set; }
         public DbSet<EstadoCita> EstadosTurno { get; set; }
         public DbSet<MotivoCita> Motivos { get; set; }
-        public DbSet<ProfesionalHorario> HorariosProfesional { get; set; }
+        public DbSet<ProfesionalHorarios> ProfesionalHorarios { get; set; }
         public DbSet<Paciente> Pacientes { get; set; }
         public DbSet<ObraSocial> ObrasSociales { get; set; }
 
@@ -22,12 +22,12 @@ namespace AgendaSaludApp.Infrastructure.Persistence.Context
             // Aplicar las configuraciones de las entidades
 
             modelBuilder.ApplyConfiguration(new EspecialidadConfiguration());
-            modelBuilder.ApplyConfiguration(new EstadoTurnoConfiguration());
-            modelBuilder.ApplyConfiguration(new MotivoConfiguration());
+            modelBuilder.ApplyConfiguration(new EstadoCitaConfiguration());
+            modelBuilder.ApplyConfiguration(new MotivoCitaConfiguration());
             modelBuilder.ApplyConfiguration(new ObraSocialConfiguration());
             modelBuilder.ApplyConfiguration(new PacienteConfiguration());
             modelBuilder.ApplyConfiguration(new ProfesionalConfiguration());
-            modelBuilder.ApplyConfiguration(new ProfesionalHorarioConfiguration());
+            modelBuilder.ApplyConfiguration(new ProfesionalHorariosConfiguration());
             modelBuilder.ApplyConfiguration(new AgendaCitasConfiguration());
 
         }

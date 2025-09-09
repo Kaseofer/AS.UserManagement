@@ -16,20 +16,36 @@ namespace AgendaSaludApp.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<EstadoCitaDto>> GetAllAsync()
+        public async Task<List<EstadoCitaDto>> GetAllAsync()
         {
-            var estados = _estadoCitaRepository.GetAllAsync();
-            return _mapper.Map<IEnumerable<EstadoCitaDto>>(estados);
+            try
+            {
+                var estados = _estadoCitaRepository.GetAllAsync();
+
+                return _mapper.Map<List<EstadoCitaDto>>(estados);
+            }
+            catch{
+                throw;
+            }
+            
 
         }
 
         public async Task<EstadoCitaDto?> GetByIdAsync(int id)
         {
-            var estado = _estadoCitaRepository.GetByIdAsync(id);
+            try
+            {
+                var estado = _estadoCitaRepository.GetByIdAsync(id);
 
-            if (estado == null)
-                return null;
-            return _mapper.Map<EstadoCitaDto>(estado);
+                if (estado == null)
+                    throw new TaskCanceledException("Estado de Cita no encontrado");
+
+                return _mapper.Map<EstadoCitaDto>(estado);
+            }
+            catch
+            {
+                throw;
+            }
         }
     }
 }

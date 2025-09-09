@@ -61,7 +61,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         }
         catch(Exception ex)
         {
-            _logger.LogError("UpdateAsync", ex, entity);
+            _logger.LogError("UpdateAsync", ex,entity);
 
             return false;
         }
@@ -89,14 +89,25 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
 
         return entity;
     }
-    public IQueryable<T> Query(Expression<Func<T, bool>>? filtro = null)
+    public async Task<List<T>> QueryAsync
+        (Expression<Func<T, bool>>? filtro = null,
+        params string[] includeProperties)
     {
         IQueryable<T> query = _dbSet;
 
-        if (filtro != null)
-            query = query.Where(filtro);
+        // Aplicar includes dinámicos
+        foreach (var includeProperty in includeProperties)
+        {
+            query = query.Include(includeProperty);
+        }
 
-        return query;
+        // Aplicar filtro si existe
+        if (filtro != null)
+        {
+            query = query.Where(filtro);
+        }
+
+        return await query.ToListAsync();
     }
 
 }

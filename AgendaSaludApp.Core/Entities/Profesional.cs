@@ -26,11 +26,10 @@ namespace AgendaSaludApp.Core.Entities
         public DateOnly? FechaBaja { get; set; }
 
         public int EspecialidadId { get; set; }
+        public bool Activo { get; set; }
         public Especialidad Especialidad { get; internal set; }
 
-        public bool Activo { get; set; }
-
-        public ICollection<ProfesionalHorario> Horarios { get; set; }
+        public ICollection<ProfesionalHorarios> Horarios { get; set; }
 
         public ICollection<AgendaCitas> Citas { get; set; }
 

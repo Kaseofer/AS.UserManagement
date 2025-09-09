@@ -1,7 +1,9 @@
-﻿using AgendaSaludApp.Application.Dtos;
+﻿using AgendaSaludApp.Application.Common;
+using AgendaSaludApp.Application.Dtos;
 using AgendaSaludApp.Application.Dtos.Filtros;
 using AgendaSaludApp.Application.Services.Intefaces;
 using AgendaSaludApp.Core.Entities;
+using AgendaSaludApp.Infrastructure.Dtos;
 using AutoMapper;
 
 namespace AgendaSaludApp.Application.Services
@@ -17,73 +19,126 @@ namespace AgendaSaludApp.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<ProfesionalDto> CreateAsync(ProfesionalDto profesionalDto)
+      
+        public async Task<List<ProfesionalDto>> GetAllAsync()
         {
             try
             {
-                var profesionalNuevo = await _profesionalRepository.AddAsync(_mapper.Map<Profesional>(profesionalDto));
-                return _mapper.Map<ProfesionalDto>(profesionalNuevo);
+               // var profesionales = await _profesionalRepository.GetAllAsync();
+                var profesionales = await _profesionalRepository
+                                   .QueryAsync(p => p.Activo == true, 
+                                   "Especialidad","Horarios","Citas");
+                return _mapper.Map<List<ProfesionalDto>>(profesionales);
             }
             catch
             {
-                return null;
+                throw;
             }
-        }
-
-        public async Task<IEnumerable<ProfesionalDto>> GetAllAsync()
-        {
-            var profesionales = await _profesionalRepository.GetAllAsync();
-            return _mapper.Map<IEnumerable<ProfesionalDto>>(profesionales);
+            
         }
 
         public async Task<ProfesionalDto?> GetByIdAsync(int id)
         {
-            var profesional = await _profesionalRepository.GetByIdAsync(id);
-            if (profesional == null)
-                return null;
-            return _mapper.Map<ProfesionalDto>(profesional);
-        }
+            try
+            {
+                var profesional = await _profesionalRepository
+                                   .QueryAsync(p => p.Activo == true && p.Id==id,
+                                   "Especialidad", "Horarios", "Citas");
 
-        public async Task<bool> RemoveAsync(int id)
+                if (!profesional.Any())
+                    throw new TaskCanceledException("No se encontró el profesional");
+
+                return _mapper.Map<ProfesionalDto>(profesional.FirstOrDefault());
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        public async Task<ProfesionalDto> CreateAsync(ProfesionalDto profesionalDto)
         {
-            var profesional = await _profesionalRepository.GetByIdAsync(id);
+            try
+            {
+                PascalCaseHelper.NormalizarProfesional(profesionalDto);
 
-            if (profesional == null)
-                return false;
+                var profesionalNuevo = await _profesionalRepository.AddAsync(_mapper.Map<Profesional>(profesionalDto));
 
-            // lo marco con fecha de baja
-            profesional.FechaBaja = DateOnly.FromDateTime(DateTime.Now);
-            profesional.Activo = false;
+                if (profesionalNuevo.Id == 0)
+                    throw new TaskCanceledException("No se pudo crear el profesional");
 
-            var rlt = await _profesionalRepository.UpdateAsync(profesional);
-
-            return rlt;
+                return _mapper.Map<ProfesionalDto>(profesionalNuevo);
+            }
+            catch
+            {
+                throw;
+            }
         }
-
         public async Task<bool> UpdateAsync(ProfesionalDto profesionalDto)
         {
-            if (profesionalDto == null) return false;
+            try
+            {
+                  PascalCaseHelper.NormalizarProfesional(profesionalDto);
 
-            
-            var rlt = await _profesionalRepository.UpdateAsync(_mapper.Map<Profesional>(profesionalDto));
+                if (profesionalDto == null) return false;
 
-            return rlt;
+                if (await _profesionalRepository.UpdateAsync(_mapper.Map<Profesional>(profesionalDto)) == false)
+                    throw new TaskCanceledException("No se pudo actualizar el profesional");
+
+                return true;
+            }
+            catch
+            {
+                throw;
+            }
+
         }
-
-        public async Task<IEnumerable<ProfesionalDto>> FindAsync(ProfesionalFiltroDto filtro)
+        public async Task<bool> DeleteAsync(int id)
         {
-            var profesionales = await _profesionalRepository.FindAsync(p =>
-                (string.IsNullOrEmpty(filtro.Nombre) || p.Nombre.Contains(filtro.Nombre)) &&
-                (string.IsNullOrEmpty(filtro.Apellido) || p.Apellido.Contains(filtro.Apellido)) &&
-                (string.IsNullOrEmpty(filtro.Matricula) || p.Matricula.Contains(filtro.Matricula)) &&
-                (!filtro.EspecialidadId.HasValue || p.EspecialidadId == filtro.EspecialidadId.Value) &&
-                (!filtro.Activo.HasValue || p.Activo == filtro.Activo.Value)
-            );
+            try
+            {
+                var profesional = await _profesionalRepository.GetByIdAsync(id);
 
-            return _mapper.Map<IEnumerable<ProfesionalDto>>(profesionales);
+                if (profesional == null)
+                    throw new TaskCanceledException("No se encontró el profesional");
+
+                // lo marco con fecha de baja
+                profesional.FechaBaja = DateOnly.FromDateTime(DateTime.Now);
+                profesional.Activo = false;
+
+                if (await _profesionalRepository.UpdateAsync(profesional) == false)
+                    throw new TaskCanceledException("No se pudo eliminar el profesional");
+
+                return true;
+            }
+            catch
+            {
+                throw;
+            }
+            
         }
 
+       
 
+        public async Task<List<ProfesionalDto>> FindAsync(ProfesionalFiltroDto filtro)
+        {
+            try
+            {
+                var profesionales = await _profesionalRepository.QueryAsync(p =>
+                                    (string.IsNullOrEmpty(filtro.Nombre) || p.Nombre.Contains(filtro.Nombre)) &&
+                                    (string.IsNullOrEmpty(filtro.Apellido) || p.Apellido.Contains(filtro.Apellido)) &&
+                                    (string.IsNullOrEmpty(filtro.Matricula) || p.Matricula.Contains(filtro.Matricula)) &&
+                                    (!filtro.EspecialidadId.HasValue || p.EspecialidadId == filtro.EspecialidadId.Value) &&
+                                    (!filtro.Activo.HasValue || p.Activo == filtro.Activo.Value),
+                                   "Especialidad", "Horarios", "Citas");
 
+                return _mapper.Map<List<ProfesionalDto>>(profesionales);
+            }
+            catch 
+            {
+                throw;
+            }
+        }
+
+      
     }
 }

@@ -11,7 +11,7 @@ namespace AgendaSaludApp.Application.Services.Intefaces
     public interface IEspecialidadService
     {
         Task<EspecialidadDto> CreateAsync(EspecialidadDto especialidadDto);
-        Task<IEnumerable<EspecialidadDto>> GetAllAsync();
+        Task<List<EspecialidadDto>> GetAllAsync();
         Task<EspecialidadDto?> GetByIdAsync(int id);
     }
 }

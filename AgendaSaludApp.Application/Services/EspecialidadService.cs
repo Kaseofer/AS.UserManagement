@@ -20,25 +20,49 @@ namespace AgendaSaludApp.Application.Services
             try
             {
                 var especialidadNueva = await _especialidadesRepository.AddAsync(_mapper.Map<Especialidad>(especialidadDto));
+
+                if (especialidadNueva.Id == 0)
+                    throw new TaskCanceledException("No se pudo dar de alta Cancelado");
+
                 return _mapper.Map<EspecialidadDto>(especialidadNueva);
             }
-            catch
-            {
-                return null;
+            catch{ 
+
+                throw;
             }
         }
-        public async Task<IEnumerable<EspecialidadDto>> GetAllAsync()
+        public async Task<List<EspecialidadDto>> GetAllAsync()
         {
-            var especialidades = await _especialidadesRepository.GetAllAsync();
-            return _mapper.Map<IEnumerable<EspecialidadDto>>(especialidades);
+            try
+            {
+                var especialidades = await _especialidadesRepository.GetAllAsync();
+
+                return _mapper.Map<List<EspecialidadDto>>(especialidades);
+            }
+            catch(Exception e) {
+
+                throw e;
+            }
+            
         }
 
         public async Task<EspecialidadDto?> GetByIdAsync(int id)
         {
-            var especialidad = await _especialidadesRepository.GetByIdAsync(id);
-            if (especialidad == null)
-                return null;
-            return _mapper.Map<EspecialidadDto>(especialidad);
+            try
+            {
+                var especialidad = await _especialidadesRepository.GetByIdAsync(id);
+
+                if (especialidad == null)
+                    throw new TaskCanceledException("No se encontró la especialidad");
+
+                return _mapper.Map<EspecialidadDto>(especialidad);
+            }
+            catch 
+            {
+
+                throw;
+            }
+            
         }
     }
 }

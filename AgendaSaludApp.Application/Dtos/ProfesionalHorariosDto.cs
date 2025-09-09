@@ -2,7 +2,7 @@
 
 namespace AgendaSaludApp.Application.Dtos
 {
-    public class ProfesionalHorarioDto
+    public class ProfesionalHorariosDto
     {
         [Key]
         public int Id { get; set; }

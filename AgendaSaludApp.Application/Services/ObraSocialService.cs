@@ -21,6 +21,10 @@ namespace AgendaSaludApp.Application.Services
             try
             {
                 var obraSocialNueva = await _obraSocialRepository.AddAsync(_mapper.Map<ObraSocial>(obraSocialDto));
+                
+                if(obraSocialNueva.Id == 0)
+                    throw new TaskCanceledException("No se pudo dar de alta Cancelado");
+
                 return _mapper.Map<ObraSocialDto>(obraSocialNueva);
             }
             catch
@@ -28,18 +32,38 @@ namespace AgendaSaludApp.Application.Services
                 return null;
             }
         }
-        public async Task<IEnumerable<ObraSocialDto>> GetAllAsync()
+        public async Task<List<ObraSocialDto>> GetAllAsync()
         {
-            var obrasSociales = await _obraSocialRepository.GetAllAsync();
-            return _mapper.Map<IEnumerable<ObraSocialDto>>(obrasSociales);
+            try
+            {
+                var obrasSociales = await _obraSocialRepository.GetAllAsync();
+
+                return _mapper.Map<List<ObraSocialDto>>(obrasSociales);
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
+            
+
         }
 
         public async Task<ObraSocialDto?> GetByIdAsync(int id)
         {
-            var obraSocial = await _obraSocialRepository.GetByIdAsync(id);
-            if (obraSocial == null)
-                return null;
-            return _mapper.Map<ObraSocialDto>(obraSocial);
+            try
+            {
+                var obraSocial = await _obraSocialRepository.GetByIdAsync(id);
+            
+                if (obraSocial == null)
+                    throw new TaskCanceledException("No Encontro la Obra Social");
+            
+                return _mapper.Map<ObraSocialDto>(obraSocial);
+            }
+            catch 
+            {
+                throw;
+            }
+            
         }
     }
 }

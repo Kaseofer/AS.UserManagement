@@ -5,17 +5,15 @@ namespace AgendaSaludApp.Application.Services.Intefaces
 {
     public interface IProfesionalesService
     {
-        Task<IEnumerable<ProfesionalDto>> GetAllAsync();
+        Task<List<ProfesionalDto>> GetAllAsync();
         Task<ProfesionalDto?> GetByIdAsync(int id);
 
         Task<ProfesionalDto> CreateAsync(ProfesionalDto profesionalDto);
 
         Task<bool> UpdateAsync(ProfesionalDto profesionalDto);
 
-        Task<bool> RemoveAsync(int id);
+        Task<bool> DeleteAsync(int id);
 
-        Task<IEnumerable<ProfesionalDto>> FindAsync(ProfesionalFiltroDto filtro);
-
-
+        Task<List<ProfesionalDto>> FindAsync(ProfesionalFiltroDto filtro);
     }
 }

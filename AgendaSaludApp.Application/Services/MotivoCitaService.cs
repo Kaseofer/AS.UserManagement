@@ -23,19 +23,37 @@ namespace AgendaSaludApp.Application.Services
         }
 
 
-        public async Task<IEnumerable<MotivoCitaDto>> GetAllAsync()
+        public async Task<List<MotivoCitaDto>> GetAllAsync()
         {
-            var motivos = await _motivoRepository.GetAllAsync();
-            return _mapper.Map<IEnumerable<MotivoCitaDto>>(motivos);
+            try
+            {
+                var motivos = await _motivoRepository.GetAllAsync();
+                return _mapper.Map<List<MotivoCitaDto>>(motivos);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         public async Task<MotivoCitaDto?> GetByIdAsync(int id)
         {
-            var motivo = await _motivoRepository.GetByIdAsync(id);
-            if (motivo == null)
-                return null;
+            try
+            {
+                var motivo = await _motivoRepository.GetByIdAsync(id);
 
-            return _mapper.Map<MotivoCitaDto>(motivo);
+                if (motivo == null)
+                    throw new TaskCanceledException("No se encontró el motivo");
+
+                return _mapper.Map<MotivoCitaDto>(motivo);
+            }
+            catch 
+            {
+
+                throw;
+            }
+            
         }
 
     }
