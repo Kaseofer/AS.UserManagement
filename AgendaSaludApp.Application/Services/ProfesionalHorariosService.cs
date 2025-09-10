@@ -117,5 +117,24 @@ namespace AgendaSaludApp.Application.Services
             }
 
         }
+
+        public async Task<List<ProfesionalHorariosDto>?> GetByProfesionalIdAsync(int profesionalId)
+        {
+            try
+            {
+                var Horarios = await  _profesionalHorariosRepository.QueryAsync(p => p.ProfesionalId == profesionalId);
+                
+                if (!Horarios.Any())
+                    throw new TaskCanceledException("No se encontró el horario");
+                Horarios = Horarios.OrderBy(h => h.DiaSemana).ThenBy(h => h.HoraInicio).ToList();
+
+                return _mapper.Map<List<ProfesionalHorariosDto>>(Horarios);
+            }
+            catch 
+            {
+
+                throw;
+            }
+        }
     }
 }

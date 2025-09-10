@@ -28,6 +28,14 @@ namespace AgendaSaludApp.Application.Services
                 var profesionales = await _profesionalRepository
                                    .QueryAsync(p => p.Activo == true, 
                                    "Especialidad","Horarios","Citas");
+
+                profesionales = profesionales.OrderBy(p => p.Nombre).ThenBy(p => p.Nombre).ToList();
+                // ordeno las citas de cada profesional por fecha y hora
+                profesionales.ForEach(p => p.Citas.OrderBy(c => c.Fecha).ThenBy(c => c.HoraInicio).ToList());
+                
+                profesionales.ForEach(p => p.Horarios.OrderBy(h => h.DiaSemana).ThenBy(h => h.HoraInicio).ToList());
+
+
                 return _mapper.Map<List<ProfesionalDto>>(profesionales);
             }
             catch
@@ -47,6 +55,11 @@ namespace AgendaSaludApp.Application.Services
 
                 if (!profesional.Any())
                     throw new TaskCanceledException("No se encontró el profesional");
+
+
+                profesional.ForEach(p => p.Citas.OrderBy(c => c.Fecha).ThenBy(c => c.HoraInicio).ToList());
+
+                profesional.ForEach(p => p.Horarios.OrderBy(h => h.DiaSemana).ThenBy(h => h.HoraInicio).ToList());
 
                 return _mapper.Map<ProfesionalDto>(profesional.FirstOrDefault());
             }

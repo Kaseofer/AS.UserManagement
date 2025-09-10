@@ -30,6 +30,9 @@ namespace AgendaSaludApp.Infrastructure.Persistence.Context
             modelBuilder.ApplyConfiguration(new ProfesionalHorariosConfiguration());
             modelBuilder.ApplyConfiguration(new AgendaCitasConfiguration());
 
+            // Filtro global para no traer citas vencidas
+            modelBuilder.Entity<AgendaCitas>()
+            .HasQueryFilter(c => !c.Vencida);
         }
     }
 }

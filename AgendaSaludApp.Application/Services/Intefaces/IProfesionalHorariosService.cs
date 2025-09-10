@@ -14,5 +14,6 @@ namespace AgendaSaludApp.Application.Services.Intefaces
         Task<bool> DeleteAsync(int id);
         Task<List<ProfesionalHorariosDto>> GetAllAsync();
         Task<ProfesionalHorariosDto?> GetByIdAsync(int id);
+        Task<List<ProfesionalHorariosDto>?> GetByProfesionalIdAsync(int profesionalId);
     }
 }

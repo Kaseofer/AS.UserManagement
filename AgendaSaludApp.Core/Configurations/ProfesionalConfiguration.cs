@@ -26,6 +26,8 @@ namespace AgendaSaludApp.Core.Configurations
                      .WithOne(c => c.Profesional)
                      .HasForeignKey(c => c.ProfesionalId)
                      .OnDelete(DeleteBehavior.Restrict);
+
+
         }
     }
 }

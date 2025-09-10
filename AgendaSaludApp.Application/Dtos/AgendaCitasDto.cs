@@ -28,5 +28,7 @@ namespace AgendaSaludApp.Application.Dtos
         public EstadoCitaDto EstadoCita { get; set; }
 
         public int UsuarioId { get; set; }
+
+        public bool Vencida { get; set; }
     }
 }

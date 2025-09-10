@@ -28,6 +28,8 @@ namespace AgendaSaludApp.Core.Entities
 
         public int UsuarioId { get; set; }
 
+        public bool Vencida { get; set; }   
+
 
     }
 }
