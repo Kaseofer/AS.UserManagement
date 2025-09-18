@@ -5,25 +5,19 @@ EXPOSE 8080
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copiar archivos de solución y proyectos
-COPY *.sln .
-COPY AgendaSaludApp.Server/*.csproj ./AgendaSaludApp.Server/
-COPY AgendaSaludApp.Application/*.csproj ./AgendaSaludApp.Application/
-COPY AgendaSaludApp.Core/*.csproj ./AgendaSaludApp.Core/
-COPY AgendaSaludApp.Infrastructure/*.csproj ./AgendaSaludApp.Infrastructure/
+# Copiar solución y proyectos para restore optimizado
+COPY *.sln ./
+COPY */*.csproj ./
+RUN for file in $(ls *.csproj); do mkdir -p ${file%.*}/ && mv $file ${file%.*}/; done
 
 # Restaurar dependencias
-RUN dotnet restore "AgendaSaludApp.Server/AgendaSaludApp.Server.csproj"
+RUN dotnet restore
 
 # Copiar el resto del código
-COPY AgendaSaludApp.Server/ ./AgendaSaludApp.Server/
-COPY AgendaSaludApp.Application/ ./AgendaSaludApp.Application/
-COPY AgendaSaludApp.Core/ ./AgendaSaludApp.Core/
-COPY AgendaSaludApp.Infrastructure/ ./AgendaSaludApp.Infrastructure/
+COPY . .
 
-# Publicar la aplicación
-WORKDIR "/src/AgendaSaludApp.Server"
-RUN dotnet publish "AgendaSaludApp.Server.csproj" -c Release -o /app/publish --no-restore
+# Publicar
+RUN dotnet publish "AgendaSaludApp.Server/AgendaSaludApp.Server.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
