@@ -5,18 +5,13 @@ EXPOSE 8080
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copiar solución y proyectos para restore optimizado
-COPY *.sln ./
-COPY */*.csproj ./
-RUN for file in $(ls *.csproj); do mkdir -p ${file%.*}/ && mv $file ${file%.*}/; done
-
-# Restaurar dependencias
-RUN dotnet restore
-
-# Copiar el resto del código
+# Copiar todo el código
 COPY . .
 
-# Publicar
+# Restaurar el proyecto API
+RUN dotnet restore "AgendaSaludApp.Api/AgendaSaludApp.Api.csproj"
+
+# Publicar la aplicación
 RUN dotnet publish "AgendaSaludApp.Api/AgendaSaludApp.Api.csproj" -c Release -o /app/publish
 
 FROM base AS final
@@ -26,4 +21,5 @@ COPY --from=build /app/publish .
 ENV ASPNETCORE_URLS=http://+:8080
 ENV ASPNETCORE_ENVIRONMENT=Production
 
-ENTRYPOINT ["dotnet", "AgendaSaludApp.Server.dll"]
+# ✅ CAMBIAR ESTA LÍNEA
+ENTRYPOINT ["dotnet", "AgendaSaludApp.Api.dll"]
