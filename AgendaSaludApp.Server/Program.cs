@@ -26,9 +26,8 @@ builder.Services.AddFluentValidationAutoValidation();
 
 
 
-// Add services to the container.
+// Configuraciones de servicios de tu arquitectura limpia
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -58,6 +57,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// Para Railway - usar puerto dinámico
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+app.Urls.Clear();
+app.Urls.Add($"http://0.0.0.0:{port}");
+
 
 app.UseCors("AllowAllOrigins");
 
