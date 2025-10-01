@@ -55,8 +55,11 @@ var app = builder.Build();
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+// Habilitar Swagger solo si hay una variable de entorno específica
+var enableSwagger = Environment.GetEnvironmentVariable("ENABLE_SWAGGER") == "true"
+                    || app.Environment.IsDevelopment();
+
+if (enableSwagger)
 {
     app.UseSwagger();
     app.UseSwaggerUI();
