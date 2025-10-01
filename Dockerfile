@@ -9,10 +9,10 @@ WORKDIR /src
 COPY . .
 
 # Restaurar el proyecto API
-RUN dotnet restore "AS.UserManegement.Api/AS.UserManegement.Api.csproj"
+RUN dotnet restore "AS.UserManagement.Api/AS.UserManagement.Api.csproj"
 
 # Publicar la aplicación
-RUN dotnet publish "AS.UserManegement.Api/AS.UserManegement.Api.csproj" -c Release -o /app/publish
+RUN dotnet publish "AS.UserManagement.Api/AS.UserManagement.Api.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
@@ -22,4 +22,4 @@ ENV ASPNETCORE_URLS=http://+:8080
 ENV ASPNETCORE_ENVIRONMENT=Production
 
 # ✅ CAMBIAR ESTA LÍNEA
-ENTRYPOINT ["dotnet", "AS.UserManegement.Api.dll"]
+ENTRYPOINT ["dotnet", "AS.UserManagement.Api.dll"]
