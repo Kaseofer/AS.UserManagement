@@ -18,18 +18,15 @@ namespace AS.UserManagement.Api.Controllers
     public class ProfessionalController : ControllerBase
     {
         private readonly IProfessionalService  _profesionalService;
-        private readonly IProfessionalScheduleService _profesionalHorariosService;
         private readonly IAppLogger<ProfessionalController> _logger;
         private readonly IAuthServiceClient _authServiceClient;
 
         public ProfessionalController(IProfessionalService profesionalesService,
                                      IAppLogger<ProfessionalController> logger,
-                                     IProfessionalScheduleService profesionalHorariosService,
                                      IAuthServiceClient authServiceClient)
         {
             _profesionalService = profesionalesService;
             _logger = logger;
-            _profesionalHorariosService = profesionalHorariosService;
             _authServiceClient = authServiceClient;
         }
 

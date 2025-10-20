@@ -23,7 +23,7 @@ namespace AS.UserManagement.Application.Dtos.Professional
 
         // Navegaciones
         public MedicalSpecialtyResponseDto? Specialty { get; set; }
-        public List<ProfessionalScheduleResponseDto> Schedules { get; set; } = new List<ProfessionalScheduleResponseDto>();
+
     }
 }
 

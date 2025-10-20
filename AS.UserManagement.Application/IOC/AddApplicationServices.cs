@@ -16,7 +16,6 @@ namespace AS.UserManagement.Application.IOC
             services.AddScoped<IHealthInsuranceService, HealthInsuranceService>();
             services.AddScoped<IPatientService, PatientService>();
             services.AddScoped<IProfessionalService, ProfessionalService>();
-            services.AddScoped<IProfessionalScheduleService, ProfessionalScheduleService>();
 
 
 

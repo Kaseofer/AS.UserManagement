@@ -10,7 +10,6 @@ namespace AS.UserManagement.Infrastructure.Persistence.Context
 
         public DbSet<Professional> Profesionales { get; set; }
         public DbSet<MedicalSpecialty> Especialidades { get; set; }
-        public DbSet<ProfessionalSchedule> ProfesionalHorarios { get; set; }
         public DbSet<Patient> Pacientes { get; set; }
         public DbSet<HealthInsurance> ObrasSociales { get; set; }
 
@@ -23,7 +22,6 @@ namespace AS.UserManagement.Infrastructure.Persistence.Context
             modelBuilder.ApplyConfiguration(new HealthInsuranceConfiguration());
             modelBuilder.ApplyConfiguration(new PatientConfiguration());
             modelBuilder.ApplyConfiguration(new ProfessionalConfiguration());
-            modelBuilder.ApplyConfiguration(new ProfessionalScheduleConfiguration());
 
 
         }

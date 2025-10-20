@@ -38,21 +38,20 @@ namespace AS.UserManagement.Application.Mappers
                 .ForMember(dest => dest.Id, opt => opt.Ignore())
                 .ForMember(dest => dest.RegistrationDate, opt => opt.Ignore())
                 .ForMember(dest => dest.DeactivationDate, opt => opt.Ignore())
-                .ForMember(dest => dest.Specialty, opt => opt.Ignore())
-                .ForMember(dest => dest.Schedules, opt => opt.Ignore());
+                .ForMember(dest => dest.Specialty, opt => opt.Ignore());
+
 
             // Para UPDATE (entrada)
             CreateMap<UpdateProfessionalDto, Professional>()
                 .ForMember(dest => dest.Id, opt => opt.Ignore())
                 .ForMember(dest => dest.RegistrationDate, opt => opt.Ignore())
                 .ForMember(dest => dest.Specialty, opt => opt.Ignore())
-                .ForMember(dest => dest.Schedules, opt => opt.Ignore())
                 .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
 
             // Para RESPONSE (salida)
-            CreateMap<Professional , ProfessionalResponseDto>()
-                .ForMember(dest => dest.Specialty , opt => opt.MapFrom(src => src.Specialty))
-                .ForMember(dest => dest.Schedules, opt => opt.MapFrom(src => src.Schedules));
+            CreateMap<Professional, ProfessionalResponseDto>()
+                .ForMember(dest => dest.Specialty, opt => opt.MapFrom(src => src.Specialty));
+
 
 
             // ========== SCHEDULE MANAGER ==========
@@ -71,22 +70,7 @@ namespace AS.UserManagement.Application.Mappers
             // Para RESPONSE
             CreateMap<ScheduleManager, ScheduleManagerResponseDto>();
 
-            // ========== PROFESSIONAL SCHEDULE ==========
-            // Para CREATE
-            CreateMap<CreateProfessionalScheduleDto, ProfessionalSchedule>()
-                .ForMember(dest => dest.Id, opt => opt.Ignore())
-                .ForMember(dest => dest.Professional, opt => opt.Ignore());
-
-            // Para UPDATE
-            CreateMap<UpdateProfessionalScheduleDto, ProfessionalSchedule>()
-                .ForMember(dest => dest.Id, opt => opt.Ignore())
-                .ForMember(dest => dest.ProfessionalId, opt => opt.Ignore())
-                .ForMember(dest => dest.Professional, opt => opt.Ignore())
-                .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
-
-            // Para RESPONSE
-            CreateMap<ProfessionalSchedule, ProfessionalScheduleResponseDto>()
-                .ForMember(dest => dest.Professional, opt => opt.MapFrom(src => src.Professional));
+         
 
             // ========== MEDICAL SPECIALTY ==========
             CreateMap<CreateMedicalSpecialtyDto, MedicalSpecialty>()

@@ -61,10 +61,6 @@ namespace AS.UserManagement.Core.Entities
         [Column("deactivation_date")]
         public DateOnly? DeactivationDate { get; set; }
 
-        // Navegaciones
-        public virtual ICollection<ProfessionalSchedule> Schedules { get; set; }
-            = new List<ProfessionalSchedule>();
-
         public virtual MedicalSpecialty Specialty { get; set; }
     }
 }

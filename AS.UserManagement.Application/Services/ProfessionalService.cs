@@ -30,7 +30,7 @@ namespace AS.UserManagement.Application.Services
                 profesionales = profesionales.OrderBy(p => p.FirstName).ThenBy(p => p.FirstName).ToList();
                 // ordeno las citas de cada profesional por fecha y hora
                  
-                profesionales.ForEach(p => p.Schedules.OrderBy(h => h.DayOfWeek).ThenBy(h => h.StartTime).ToList());
+               // profesionales.ForEach(p => p.Schedules.OrderBy(h => h.DayOfWeek).ThenBy(h => h.StartTime).ToList());
 
 
                 return _mapper.Map<List<ProfessionalResponseDto>>(profesionales);
@@ -53,7 +53,7 @@ namespace AS.UserManagement.Application.Services
                 if (!profesional.Any())
                     throw new TaskCanceledException("No se encontró el profesional");
 
-                profesional.ForEach(p => p.Schedules.OrderBy(h => h.DayOfWeek).ThenBy(h => h.StartTime).ToList());
+              // profesional.ForEach(p => p.Schedules.OrderBy(h => h.DayOfWeek).ThenBy(h => h.StartTime).ToList());
 
                 return _mapper.Map<ProfessionalResponseDto>(profesional.FirstOrDefault());
             }

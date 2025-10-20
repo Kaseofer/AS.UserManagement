@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Reflection;
 using System.Text;
 
 namespace AS.UserManagement.API.IOC
@@ -127,7 +128,28 @@ namespace AS.UserManagement.API.IOC
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AuthService API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "User Mangement Service API",
+                    Version = "v1",
+                    Description = "API para gestion datos Usuarios"
+                });
+
+                // Incluir comentarios XML
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                if (File.Exists(xmlPath))
+                {
+                    c.IncludeXmlComments(xmlPath);
+                }
+
+                // Opcional: Incluir XML de la capa Application si tiene DTOs documentados
+                var applicationXml = "AS.AppointmentService.Application.xml";
+                var applicationXmlPath = Path.Combine(AppContext.BaseDirectory, applicationXml);
+                if (File.Exists(applicationXmlPath))
+                {
+                    c.IncludeXmlComments(applicationXmlPath);
+                }
 
                 // Configurar JWT en Swagger
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme

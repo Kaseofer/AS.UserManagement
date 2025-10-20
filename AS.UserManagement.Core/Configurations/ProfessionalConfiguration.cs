@@ -28,12 +28,7 @@ namespace AS.UserManagement.Core.Configurations
             builder.HasIndex(p => p.Email)
                    .IsUnique()
                    .HasDatabaseName("profesional_email_key");
-          
-
-            builder.HasMany(p => p.Schedules)
-                   .WithOne(h => h.Professional)
-                   .HasForeignKey(h => h.ProfessionalId)
-                   .OnDelete(DeleteBehavior.Cascade); // Cambiado a Cascade para consistencia
+         
         }
     }
 }
