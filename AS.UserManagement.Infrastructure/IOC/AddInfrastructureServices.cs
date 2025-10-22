@@ -12,7 +12,7 @@ namespace AS.UserManagement.Infrastructure.IOC
                                                                 IConfiguration configuration)
         {
             services.AddDbContext<AgendaSaludDBContext>(options =>
-            options.UseNpgsql(configuration.GetConnectionString("AgendaSaludDb"))
+            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"))
                    .UseSnakeCaseNamingConvention());
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));

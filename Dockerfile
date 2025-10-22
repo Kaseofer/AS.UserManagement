@@ -15,7 +15,7 @@ COPY ["AS.UserManagement.Core/*.csproj", "AS.UserManagement.Core/"]
 COPY ["AS.UserManagement.Infrastructure/*.csproj", "AS.UserManagement.Infrastructure/"]
 
 # Restore de dependencias
-RUN dotnet restore "AS.UserManagement.Api/AS.UserManagement.Api.csproj"
+RUN dotnet restore "AS.UserManagement.Api/AS.UserManagement.Api.csproj" --disable-parallel --no-cache
 
 # Copia todo el código fuente
 COPY . .
