@@ -21,11 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AS.UserManagement.Application\AS.UserManagement.Application.csproj" />
-    <ProjectReference Include="..\AS.UserManagement.client\AS.UserManegement.client.esproj">
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\AS.UserManagement.Infrastructure\AS.UserManagement.Infrastructure.csproj" />
+    <ProjectReference Include="..\Application\Application.csproj" />
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
